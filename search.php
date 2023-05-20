@@ -1,10 +1,9 @@
-<!-- php code for highlighting active search tab -->
+<!-- php code for highlighting active search tab and missing search term -->
 <?php
 	if(isset($_GET["term"])) {
 		$term = $_GET["term"];
-	}
-	else {
-		exit("You must enter a search term");
+	} else {
+	    exit("Please enter a search value");
 	}
 
 	$type = isset($_GET["type"]) ? $_GET["type"] : "pages";
@@ -49,16 +48,16 @@
         </div>
 
         <div class="search-results">
-            <!-- php code for prompting user to enter value -->
-            <?php
-                if(isset($_GET["term"])) {
-                    $term = $_GET["term"];
-                } else {
-                    exit("Please enter a search value");
-                }
+        <!-- php code for prompting user to enter value -->
+        <?php
+            if(isset($_GET["term"])) {
+                $term = $_GET["term"];
+            } else {
+                exit("Please enter a search value");
+            }
 
-                echo $_GET["term"];
-            ?>
+            echo $_GET["term"];
+        ?>
         </div>
     </div>
 </body>
