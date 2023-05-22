@@ -15,6 +15,7 @@
             @$this->doc->loadHTML(file_get_contents($url, false, $context));
         }
 
+        // function to get links to pages by anchor tags
         public function getLinks() {
             return $this->doc->getElementsByTagName('a');
         }
