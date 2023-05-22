@@ -1,8 +1,15 @@
 <?php
 include("classes/DomDocumentParser.php");
 
+$crawled = array(); // array to store links that have been retrieved
+$newCrawl = array(); // array to store new links
+
 // function to retrieve url's from searched websites
 function findLinks($url) {
+
+    global $crawled;
+    global $newCrawl;
+    
     $parser = new DomDocumentParser($url);
     $linkList = $parser->getLinks();
     
@@ -17,19 +24,33 @@ function findLinks($url) {
 
         $href = createLink($href, $url);
 
-        echo $href . '<br>';
+        //if statement to recursively crawl links
+        if(!in_array($href, $crawled)) {
+            $crawled[] = $href;
+            $newCrawl[] = $href;
+
+            getTitles($href);
+        } 
+        
+        else return;
+    }
+
+    array_shift($newCrawl);
+
+    foreach ($newCrawl as $page) {
+        findLinks($page);
     }
 }
 
 // function to covert found links to full url's
 function createLink($src, $url) {
-    echo "SRC: $src<br>";
-    echo "URL: $url<br>";
+    // echo "SRC: $src<br>";
+    // echo "URL: $url<br>";
 
     $scheme = parse_url($url)["scheme"]; // https
     $host = parse_url($url)["host"]; // main website url
-    echo "HOST: $host<br>";
-    
+    // echo "HOST: $host<br>";
+
     // switch statement to amend data to full url's
     switch (true) {
         case (substr($src, 0, 2) == "//"):
@@ -52,10 +73,29 @@ function createLink($src, $url) {
     return $src;
 }
 
+// function to get titles of pages
+function getTitles($url) {
+
+    $parser = new DomDocumentParser($url);
+    $titleList = $parser->retrieveTitles();
+
+    if(sizeof($titleList) == 0 || $titleList->item(0) == NULL) {
+        return;
+    }
+
+    $title = $titleList->item(0)->nodeValue;
+    $title = str_replace("\n", "", $title);
+
+    if($title == "") {
+        return;
+    }
+
+    echo "URL: $url, Title: $title<br>";
+}
 
 // url's crawled to get links
-$firstURL = "https://www.theguardian.com";
-findLinks($firstURL);
+// $firstURL = "https://www.theguardian.com";
+// findLinks($firstURL);
 
 $secondURL = "https://www.bbc.com";
 findLinks($secondURL);

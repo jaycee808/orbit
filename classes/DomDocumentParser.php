@@ -19,5 +19,10 @@
         public function getLinks() {
             return $this->doc->getElementsByTagName('a');
         }
+
+        // function to get title tags
+        public function retrieveTitles() {
+            return $this->doc->getElementsByTagName('title');
+        }
     }
 ?>
