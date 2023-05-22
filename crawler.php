@@ -5,9 +5,19 @@ function findLinks($url) {
     echo $url;
 
     $parser = new DomDocumentParser($url);
+
+    $linkList = $parser->getLinks();
+    
+    foreach($linkList as $link) {
+        $href = $link->getAttribute('href');
+        echo $href . '<br>';
+    }
 }
 
-$startURL = "https://www.theguardian.com";
-findLinks($startURL);
+$firstURL = "https://www.theguardian.com";
+findLinks($firstURL);
+
+$secondURL = "https://www.bbc.com";
+findLinks($secondURL);
 
 ?>
