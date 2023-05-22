@@ -75,18 +75,17 @@ function createLink($src, $url) {
 
 // function to get titles of pages
 function getLinkInfo($url) {
-
     $parser = new DomDocumentParser($url);
     $titleList = $parser->retrieveTitles();
 
-    if(sizeof($titleList) == 0 || $titleList->item(0) == NULL) {
+    if (sizeof($titleList) == 0 || $titleList->item(0) == NULL) {
         return;
     }
 
     $title = $titleList->item(0)->nodeValue;
     $title = str_replace("\n", "", $title);
 
-    if($title == "") {
+    if ($title == "") {
         return;
     }
 
@@ -95,23 +94,42 @@ function getLinkInfo($url) {
 
     $metaTagList = $parser->retrieveMetaTags();
 
-    foreach($metaTagList as $metaTag) {
-        if($metaTag->getAttribute("name") == "description") {
-            $description = $metaTag->getAttribute("content");
-        }
+    // foreach ($metaTagList as $metaTag) {
+    //     if ($metaTag->getAttribute("name") == "description") {
+    //         $description = $metaTag->getAttribute("content");
+    //     }
 
-        if($metaTag->getAttribute("name") == "keywords") {
-            $keywords = $metaTag->getAttribute("content");
-        }
+    //     if ($metaTag->getAttribute("name") == "keywords") {
+    //         $keywords = $metaTag->getAttribute("content");
+    //     }
+    // }
 
-    $description = str_replace("\n", "", $description);
-    $keywords = str_replace("\n", "", $keywords);
+    // $description = str_replace("\n", "", $description);
+    // $keywords = str_replace("\n", "", $keywords);
+
+
+    foreach ($metaTagList as $metaTag) {
+        $metaTagName = $metaTag->getAttribute("name");
+        $metaTagContent = $metaTag->getAttribute("content");
+        
+        echo "Meta Tag Name: $metaTagName, Content: $metaTagContent<br>";
+        
+        if ($metaTagName == "description") {
+            $description = $metaTagContent;
+        }
+    
+        if ($metaTagName == "keywords") {
+            $keywords = $metaTagContent;
+        }
+    }
 
     echo "URL: $url, Title: $title<br>";
     echo "URL: $url, Description: $description<br>";
     echo "URL: $url, Keywords: $keywords<br>";
+
+
 }
-}
+
 
 // function to get meta tags data
 // function getMetaTags($url) {
