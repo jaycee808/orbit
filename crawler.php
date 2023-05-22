@@ -29,7 +29,7 @@ function findLinks($url) {
             $crawled[] = $href;
             $newCrawl[] = $href;
 
-            getTitles($href);
+            getLinkInfo($href);
         } 
         
         else return;
@@ -74,7 +74,7 @@ function createLink($src, $url) {
 }
 
 // function to get titles of pages
-function getTitles($url) {
+function getLinkInfo($url) {
 
     $parser = new DomDocumentParser($url);
     $titleList = $parser->retrieveTitles();
@@ -90,8 +90,49 @@ function getTitles($url) {
         return;
     }
 
+    $description = "";
+    $keywords = "";
+
+    $metaTagList = $parser->retrieveMetaTags();
+
+    foreach($metaTagList as $metaTag) {
+        if($metaTag->getAttribute("name") == "description") {
+            $description = $metaTag->getAttribute("content");
+        }
+
+        if($metaTag->getAttribute("name") == "keywords") {
+            $keywords = $metaTag->getAttribute("content");
+        }
+
+    $description = str_replace("\n", "", $description);
+    $keywords = str_replace("\n", "", $keywords);
+
     echo "URL: $url, Title: $title<br>";
+    echo "URL: $url, Description: $description<br>";
+    echo "URL: $url, Keywords: $keywords<br>";
 }
+}
+
+// function to get meta tags data
+// function getMetaTags($url) {
+
+//     $parser = new DomDocumentParser($url);
+
+//     $description = "";
+//     $keywords = "";
+
+//     $metaTagList = $parser->retrieveMetaTags();
+
+//     foreach($metaTagList as $metaTag) {
+//         if($metaTag->getAttribute("name") == "description") {
+//             $description = $metaTag->getAttribute("content");
+//         }
+
+//         if($metaTag->getAttribute("name") == "keywords") {
+//             $description = $metaTag->getAttribute("content");
+//         }
+// }
+// }
 
 // url's crawled to get links
 // $firstURL = "https://www.theguardian.com";

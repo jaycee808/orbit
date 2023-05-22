@@ -24,5 +24,10 @@
         public function retrieveTitles() {
             return $this->doc->getElementsByTagName('title');
         }
+
+        // function to get meta tags
+        public function retrieveMetaTags() {
+            return $this->doc->getElementsByTagName('meta');
+        }
     }
 ?>
