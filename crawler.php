@@ -1,4 +1,5 @@
 <?php
+// include("config.php");
 include("classes/DomDocumentParser.php");
 
 $crawled = array(); // array to store links that have been retrieved
@@ -37,7 +38,7 @@ function findLinks($url) {
 
     array_shift($newCrawl);
 
-    foreach ($newCrawl as $page) {
+    foreach($newCrawl as $page) {
         findLinks($page);
     }
 }
@@ -52,20 +53,20 @@ function createLink($src, $url) {
     // echo "HOST: $host<br>";
 
     // switch statement to amend data to full url's
-    switch (true) {
-        case (substr($src, 0, 2) == "//"):
+    switch(true) {
+        case(substr($src, 0, 2) == "//"):
             $src = $scheme . ":" . $src;
             break;
-        case (substr($src, 0, 1) == "/"):
+        case(substr($src, 0, 1) == "/"):
             $src = $scheme . "://" . $host . $src;
             break;
-        case (substr($src, 0, 2) == "./"):
+        case(substr($src, 0, 2) == "./"):
             $src = $scheme . "://" . $host . dirname(parse_url($url)["path"]) . substr($src, 1);
             break;
-        case (substr($src, 0, 3) == "../"):
+        case(substr($src, 0, 3) == "../"):
             $src = $scheme . ":/" . $host . "/" . $src;
             break;
-        case (substr($src, 0, 5) !== "https" && substr($src, 0, 4) !== "http"):
+        case(substr($src, 0, 5) !== "https" && substr($src, 0, 4) !== "http"):
             $src = $scheme . ":/" . $host . "/" . $src;
             break;
     }
@@ -78,14 +79,14 @@ function getLinkInfo($url) {
     $parser = new DomDocumentParser($url);
     $titleList = $parser->retrieveTitles();
 
-    if (sizeof($titleList) == 0 || $titleList->item(0) == NULL) {
+    if(sizeof($titleList) == 0 || $titleList->item(0) == NULL) {
         return;
     }
 
     $title = $titleList->item(0)->nodeValue;
     $title = str_replace("\n", "", $title);
 
-    if ($title == "") {
+    if($title == "") {
         return;
     }
 
@@ -94,31 +95,15 @@ function getLinkInfo($url) {
 
     $metaTagList = $parser->retrieveMetaTags();
 
-    // foreach ($metaTagList as $metaTag) {
-    //     if ($metaTag->getAttribute("name") == "description") {
-    //         $description = $metaTag->getAttribute("content");
-    //     }
-
-    //     if ($metaTag->getAttribute("name") == "keywords") {
-    //         $keywords = $metaTag->getAttribute("content");
-    //     }
-    // }
-
-    // $description = str_replace("\n", "", $description);
-    // $keywords = str_replace("\n", "", $keywords);
-
-
-    foreach ($metaTagList as $metaTag) {
+    foreach($metaTagList as $metaTag) {
         $metaTagName = $metaTag->getAttribute("name");
         $metaTagContent = $metaTag->getAttribute("content");
         
-        echo "Meta Tag Name: $metaTagName, Content: $metaTagContent<br>";
-        
-        if ($metaTagName == "description") {
+        if($metaTagName == "description") {
             $description = $metaTagContent;
         }
     
-        if ($metaTagName == "keywords") {
+        if($metaTagName == "keywords") {
             $keywords = $metaTagContent;
         }
     }
@@ -127,34 +112,66 @@ function getLinkInfo($url) {
     echo "URL: $url, Description: $description<br>";
     echo "URL: $url, Keywords: $keywords<br>";
 
+    if(duplicateLink($url, $title, $description, $keywords)) {
+		echo "$url already exists<br>";
+	} else if(duplicateLink($url, $title, $description, $keywords)) {
+		echo "SUCCESS: $url<br>";
+	} else {
+		echo "ERROR: Failed to insert $url<br>";
+	}
 
+    addLinkToDatabase($url, $title, $description, $keywords);
 }
 
+// function to add found links to database
+function addLinkToDatabase($url, $title, $description, $keywords) {
+    global $conn;
+    
+    $dbname = "orbit";
 
-// function to get meta tags data
-// function getMetaTags($url) {
+    try {
+        $conn = new PDO("mysql:dbname=$dbname;host=localhost", "root", "");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-//     $parser = new DomDocumentParser($url);
+        $query = $conn->prepare("INSERT INTO pages (url, title, description, keywords)
+                                VALUES (:url, :title, :description, :keywords)");
 
-//     $description = "";
-//     $keywords = "";
+        $query->bindParam(":url", $url);
+        $query->bindParam(":title", $title);
+        $query->bindParam(":description", $description);
+        $query->bindParam(":keywords", $keywords);
 
-//     $metaTagList = $parser->retrieveMetaTags();
+        return $query->execute();
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+        return false;
+    }
+}
 
-//     foreach($metaTagList as $metaTag) {
-//         if($metaTag->getAttribute("name") == "description") {
-//             $description = $metaTag->getAttribute("content");
-//         }
+// function to remove duplicate links
+function duplicateLink($url, $title, $description, $keywords) {
+    global $conn;
+    
+    $dbname = "orbit";
 
-//         if($metaTag->getAttribute("name") == "keywords") {
-//             $description = $metaTag->getAttribute("content");
-//         }
-// }
-// }
+    try {
+        $conn = new PDO("mysql:dbname=$dbname;host=localhost", "root", "");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = $conn->prepare("SELECT * FROM pages WHERE url = :url");
+
+        $query->bindParam(":url", $url);
+
+        return $query->rowCount() != 0;
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+        return false;
+    }
+}
 
 // url's crawled to get links
-// $firstURL = "https://www.theguardian.com";
-// findLinks($firstURL);
+$firstURL = "https://www.theguardian.com";
+findLinks($firstURL);
 
 $secondURL = "https://www.bbc.com";
 findLinks($secondURL);
