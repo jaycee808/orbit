@@ -1,5 +1,7 @@
-<!-- php code for highlighting active search tab and missing search term -->
 <?php
+include "classes/searchResults.php";
+include("config.php");
+// php code for highlighting active search tab and missing search term
 	if(isset($_GET["term"])) {
 		$term = $_GET["term"];
 	} else {
@@ -7,6 +9,14 @@
 	}
 
 	$type = isset($_GET["type"]) ? $_GET["type"] : "pages";
+
+    if(isset($_GET["term"])) {
+        $term = $_GET["term"];
+    } else {
+    exit("Please enter a search value");
+    }
+
+    echo $_GET["term"];
 ?>
 
 <!DOCTYPE html>
@@ -49,21 +59,21 @@
             </li>
         </ul>
     </div>
+</div>
 
-    <!-- section to display serach results -->
-    <div class="search-results">
+<!-- section to display search results -->
+<div class="search-results-pages">
 
-    <!-- php code for prompting user to enter value -->
-    <?php
-        if(isset($_GET["term"])) {
-            $term = $_GET["term"];
-        } else {
-        exit("Please enter a search value");
-        }
+<?php
+	$resultsProvider = new searchResults($conn);
 
-        echo $_GET["term"];
-    ?>
-    </div>
+	$numResults = $resultsProvider->getNumResults($term);
+
+	echo "<p class='resultsCount'>$numResults results found</p>";
+
+	echo $resultsProvider->resultsPages(1, 20, $term);
+?>
+
 </div>
 </body>
 </html>
