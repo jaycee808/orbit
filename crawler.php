@@ -1,5 +1,4 @@
 <?php
-// include("config.php");
 include("classes/DomDocumentParser.php");
 
 $crawled = array(); // array to store links that have been retrieved
@@ -7,7 +6,6 @@ $newCrawl = array(); // array to store new links
 
 // function to retrieve url's from searched websites
 function findLinks($url) {
-
     global $crawled;
     global $newCrawl;
     
@@ -33,7 +31,7 @@ function findLinks($url) {
             getLinkInfo($href);
         } 
         
-        else return;
+        // else return;
     }
 
     array_shift($newCrawl);
@@ -170,8 +168,8 @@ function duplicateLink($url, $title, $description, $keywords) {
 }
 
 // url's crawled to get links
-$firstURL = "https://www.theguardian.com";
-findLinks($firstURL);
+// $firstURL = "https://www.theguardian.com";
+// findLinks($firstURL);
 
 $secondURL = "https://www.bbc.com";
 findLinks($secondURL);
