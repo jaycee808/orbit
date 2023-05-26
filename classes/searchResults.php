@@ -23,17 +23,22 @@ class searchResults {
 		return $row["total"];
 	}
 
-	public function resultsPages($page, $pageSize, $term) {
+	public function resultsPages($pageIndex, $numOfResults, $term) {
+
+		$displayResults = ($pageIndex - 1) * $numOfResults;
 
 		$query = $this->conn->prepare("SELECT * 
 									FROM pages WHERE title LIKE :term 
 									OR url LIKE :term 
 									OR keywords LIKE :term 
 									OR description LIKE :term
-									ORDER BY clicks DESC");
+									ORDER BY clicks DESC
+									LIMIT :displayResults, :numOfResults");
 
 		$searchTerm = "%". $term . "%";
 		$query->bindParam(":term", $searchTerm);
+		$query->bindParam(":displayResults", $displayResults, PDO::PARAM_INT);
+		$query->bindParam(":numOfResults", $numOfResults, PDO::PARAM_INT);
 		$query->execute();
 
 		$resultsHtml = "<div class='searchResults'>";

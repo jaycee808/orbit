@@ -9,6 +9,7 @@ include("config.php");
 	}
 
 	$type = isset($_GET["type"]) ? $_GET["type"] : "pages";
+    $pageIndex = isset($_GET["pageIndex"]) ? $_GET["pageIndex"] : 1;
 
     if(isset($_GET["term"])) {
         $term = $_GET["term"];
@@ -61,19 +62,44 @@ include("config.php");
     </div>
 </div>
 
-<!-- section to display search results -->
-<div class="search-results-pages">
+    <!-- section to display search results -->
+    <div class="search-results-pages">
 
-<?php
-	$resultsProvider = new searchResults($conn);
+    <?php
+        $resultsProvider = new searchResults($conn);
+        $pageLimit = 20;
+        $numResults = $resultsProvider->getNumResults($term);
 
-	$numResults = $resultsProvider->getNumResults($term);
+        echo "<p class='resultsCount'>$numResults results found</p>";
 
-	echo "<p class='resultsCount'>$numResults results found</p>";
+        echo $resultsProvider->resultsPages($pageIndex, $pageLimit, $term);
+    ?>
+    </div>
 
-	echo $resultsProvider->resultsPages(1, 20, $term);
-?>
+    <!-- section for page index -->
+    <div class="page-numbers">
+    <?php
+        $currentPage = 1;
+        $pagesLeft = 10;
 
-</div>
+        while($pagesLeft != 0) {
+
+            if($currentPage == $pageIndex) {
+                echo "<div class='page-numbers'>
+                <h3 class='pageNumber'>$currentPage</h3>
+            </div>";
+            } else {
+                echo "<div class='page-numbers'>
+                <a href='search.php?term=$term&type=$type&page=$currentPage'>
+                    <h3 class='pageNumber'>$currentPage</h3>
+                </a>
+            </div>";
+            }
+
+            $currentPage++;
+            $pagesLeft--;
+        }
+    ?>
+    </div>
 </body>
 </html>
