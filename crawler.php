@@ -154,14 +154,31 @@ function duplicateLink($url) {
     }
 }
 
+// function to remove titles containing 'Sign In' from the database
+function removeLinks() {
+    $dbname = "orbit";
+
+    try {
+        $conn = new PDO("mysql:dbname=$dbname;host=localhost", "root", "");
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $query = $conn->prepare("DELETE FROM pages WHERE title LIKE '%Sign In%'");
+        $query->execute();
+
+        echo "Removed titles containing 'Sign In' from the database";
+    } catch (PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+}
+
 // $firstURL = "https://www.theguardian.com";
 // findLinks($firstURL);
 
-// $secondURL = "https://www.bbc.com";
-// findLinks($secondURL);
+$secondURL = "https://www.bbc.com";
+findLinks($secondURL);
 
-$thirdURL = "https://inews.co.uk/";
-findLinks($thirdURL);
+// $thirdURL = "https://inews.co.uk/";
+// findLinks($thirdURL);
 
 // $fourthURL = "https://www.independent.co.uk/";
 // findLinks($fourthURL);
