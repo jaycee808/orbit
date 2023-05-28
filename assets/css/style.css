@@ -98,6 +98,6 @@ a:visited {
 }
 
 .tab-list li.active {
-    border-bottom: 2px solid purple;
+    border-bottom: 2px solid blue;
     font-weight: bold;
 }
