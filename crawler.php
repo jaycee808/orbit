@@ -165,11 +165,11 @@ function removeLinks() {
     }
 }
 
-// $firstURL = "https://www.theguardian.com";
-// findLinks($firstURL);
+$firstURL = "https://www.theguardian.com";
+findLinks($firstURL);
 
-$secondURL = "https://www.bbc.com";
-findLinks($secondURL);
+// $secondURL = "https://www.bbc.com";
+// findLinks($secondURL);
 
 // $thirdURL = "https://inews.co.uk/";
 // findLinks($thirdURL);
