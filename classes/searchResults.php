@@ -1,15 +1,15 @@
 <?php
 class searchResults {
 
-	private $conn;
+	private $connection;
 
-	public function __construct($conn) {
-		$this->conn = $conn;
+	public function __construct($connection) {
+		$this->connection = $connection;
 	}
 
 	public function getNumResults($term) {
 
-		$query = $this->conn->prepare("SELECT COUNT(*) as total 
+		$query = $this->connection->prepare("SELECT COUNT(*) as total 
 									FROM pages WHERE title LIKE :term 
 									OR url LIKE :term 
 									OR keywords LIKE :term 
@@ -27,7 +27,7 @@ class searchResults {
 
 		$displayResults = ($pageIndex - 1) * $numOfResults;
 
-		$query = $this->conn->prepare("SELECT * 
+		$query = $this->connection->prepare("SELECT * 
 									FROM pages WHERE title LIKE :term 
 									OR url LIKE :term 
 									OR keywords LIKE :term 

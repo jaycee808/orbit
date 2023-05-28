@@ -1,5 +1,6 @@
 <?php
 include("classes/DomDocumentParser.php");
+include("config.php");
 
 $crawled = array(); // array to store links that have been retrieved
 $newCrawl = array(); // array to store new links
@@ -23,7 +24,7 @@ function findLinks($url) {
 
         $href = createLink($href, $url);
 
-		//if statement to recursively crawl links
+        //if statement to recursively crawl links
         if (!in_array($href, $crawled)) {
             $crawled[] = $href;
             $newCrawl[] = $href;
@@ -43,7 +44,7 @@ function createLink($src, $url) {
     $scheme = parse_url($url)["scheme"];
     $host = parse_url($url)["host"];
 
-	// switch statement to amend data to full url's
+    // switch statement to amend data to full url's
     switch (true) {
         case (substr($src, 0, 2) == "//"):
             $src = $scheme . ":" . $src;
@@ -67,6 +68,8 @@ function createLink($src, $url) {
 
 // function to get titles of pages
 function getLinkInfo($url) {
+    global $connection;
+
     $parser = new DomDocumentParser($url);
     $titleList = $parser->retrieveTitles();
 
@@ -114,13 +117,10 @@ function getLinkInfo($url) {
 
 // function to add found links to database
 function addLinkToDatabase($url, $title, $description, $keywords) {
-    $dbname = "orbit";
+    global $connection;
 
     try {
-        $conn = new PDO("mysql:dbname=$dbname;host=localhost", "root", "");
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $query = $conn->prepare("INSERT INTO pages (url, title, description, keywords)
+        $query = $connection->prepare("INSERT INTO pages (url, title, description, keywords)
                                 VALUES (:url, :title, :description, :keywords)");
 
         $query->bindParam(":url", $url);
@@ -137,13 +137,10 @@ function addLinkToDatabase($url, $title, $description, $keywords) {
 
 // function to check for duplicate links
 function duplicateLink($url) {
-    $dbname = "orbit";
+    global $connection;
 
     try {
-        $conn = new PDO("mysql:dbname=$dbname;host=localhost", "root", "");
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $query = $conn->prepare("SELECT * FROM pages WHERE url = :url");
+        $query = $connection->prepare("SELECT * FROM pages WHERE url = :url");
         $query->bindParam(":url", $url);
         $query->execute();
 
@@ -156,13 +153,10 @@ function duplicateLink($url) {
 
 // function to remove titles containing 'Sign In' from the database
 function removeLinks() {
-    $dbname = "orbit";
+    global $connection;
 
     try {
-        $conn = new PDO("mysql:dbname=$dbname;host=localhost", "root", "");
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $query = $conn->prepare("DELETE FROM pages WHERE title LIKE '%Sign In%'");
+        $query = $connection->prepare("DELETE FROM pages WHERE title LIKE '%Sign In%'");
         $query->execute();
 
         echo "Removed titles containing 'Sign In' from the database";

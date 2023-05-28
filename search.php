@@ -66,7 +66,7 @@ include("config.php");
     <div class="search-results-pages">
 
     <?php
-        $resultsProvider = new searchResults($conn);
+        $resultsProvider = new searchResults($connection);
         $pageLimit = 20;
         $numResults = $resultsProvider->getNumResults($term);
 
