@@ -1,5 +1,5 @@
 <?php
-include "classes/searchResults.php";
+include "./classes/searchResults.php";
 include("config.php");
 // php code for highlighting active search tab and missing search term
 	if(isset($_GET["term"])) {
@@ -23,7 +23,7 @@ include("config.php");
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>orbit</title>
 </head>
 <body>

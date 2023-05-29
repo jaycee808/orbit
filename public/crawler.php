@@ -1,5 +1,5 @@
 <?php
-include("classes/DomDocumentParser.php");
+include("./classes/DomDocumentParser.php");
 include("config.php");
 
 $crawled = array(); // array to store links that have been retrieved
@@ -174,6 +174,9 @@ function removeLinks() {
 // $thirdURL = "https://inews.co.uk/";
 // findLinks($thirdURL);
 
-$fourthURL = "https://www.independent.co.uk/";
-findLinks($fourthURL);
+// $fourthURL = "https://www.independent.co.uk/";
+// findLinks($fourthURL);
+
+$fifthURL = "https://www.rollingstone.com/";
+findLinks($fifthURL);
 ?>
