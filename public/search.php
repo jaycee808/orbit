@@ -1,5 +1,5 @@
 <?php
-include "./classes/searchResults.php";
+include("./classes/searchResults.php");
 include("config.php");
 // php code for highlighting active search tab and missing search term
 	if(isset($_GET["term"])) {
@@ -39,7 +39,7 @@ include("config.php");
     
     <div id="search-bar">
         <form action="search.php" method="GET">
-            <input class="search-box" type="text" name="term" placeholder="Let's explore">
+            <input class="search-box" type="text" name="term" placeholder="<?php echo $term ?>">
             <input class="search-button" type="submit" value="Search">
         </form>
     </div>

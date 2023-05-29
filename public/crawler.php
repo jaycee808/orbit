@@ -1,5 +1,5 @@
 <?php
-include("./classes/DomDocumentParser.php");
+include("../public/classes/DomDocumentParser.php");
 include("config.php");
 
 $crawled = array(); // array to store links that have been retrieved
