@@ -17,13 +17,13 @@ include("config.php");
     exit("Please enter a search value");
     }
 
-    echo $_GET["term"];
+    // echo $_GET["term"];
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>orbit</title>
 </head>
 <body>
@@ -42,8 +42,8 @@ include("config.php");
             <input class="search-box" type="text" name="term" placeholder="Let's explore">
             <input class="search-button" type="submit" value="Search">
         </form>
-        </div>
     </div>
+</div>
 
     <!-- tabs to filter search results -->
     <div class="search-tabs">
@@ -53,17 +53,12 @@ include("config.php");
                 Pages
                 </a>
             </li>
-            <li class="<?php echo $type == 'images' ? 'active' : '' ?>">
-                <a href='<?php echo "search.php?term=$term&type=images"; ?>'>
-                Images
-                </a>
-            </li>
         </ul>
     </div>
 </div>
 
     <!-- section to display search results -->
-    <div class="search-results-pages">
+    <div id="resultsDisplay">
 
     <?php
         $resultsProvider = new searchResults($connection);
@@ -77,29 +72,32 @@ include("config.php");
     </div>
 
     <!-- section for page index -->
-    <div class="page-numbers">
-    <?php
-        $currentPage = 1;
-        $pagesLeft = 10;
+    
+    <div id="page-number-container">
+        <div class="page-numbers">
+        <?php
+            $currentPage = 1;
+            $pagesLeft = 5;
 
-        while($pagesLeft != 0) {
+            while($pagesLeft != 0) {
 
-            if($currentPage == $pageIndex) {
-                echo "<div class='page-numbers'>
-                <h3 class='pageNumber'>$currentPage</h3>
-            </div>";
-            } else {
-                echo "<div class='page-numbers'>
-                <a href='search.php?term=$term&type=$type&page=$currentPage'>
+                if($currentPage == $pageIndex) {
+                    echo "<div class='page-numbers'>
                     <h3 class='pageNumber'>$currentPage</h3>
-                </a>
-            </div>";
-            }
+                </div>";
+                } else {
+                    echo "<div class='page-numbers'>
+                    <a href='search.php?term=$term&type=$type&page=$currentPage'>
+                        <h3 class='pageNumber'>$currentPage</h3>
+                    </a>
+                </div>";
+                }
 
-            $currentPage++;
-            $pagesLeft--;
-        }
-    ?>
+                $currentPage++;
+                $pagesLeft--;
+            }
+        ?>
+        </div>
     </div>
 </body>
 </html>
