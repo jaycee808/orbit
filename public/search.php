@@ -1,12 +1,7 @@
 <?php
 include("./classes/searchResults.php");
 include("config.php");
-// php code for highlighting active search tab and missing search term
-	if(isset($_GET["term"])) {
-		$term = $_GET["term"];
-	} else {
-	exit("Please enter a search value");
-	}
+// php code for highlighting active search tab
 
 	$type = isset($_GET["type"]) ? $_GET["type"] : "pages";
     $pageIndex = isset($_GET["pageIndex"]) ? $_GET["pageIndex"] : 1;

@@ -56,7 +56,7 @@ class searchResults {
 					$title
 					</a>
 				</h3>
-					<span class='url'>$url</span>
+					<span class='url'>$url</span><br />
 					<span class='description'>$description</span>
 			</div>";
 		}

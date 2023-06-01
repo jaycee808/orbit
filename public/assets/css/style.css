@@ -14,6 +14,9 @@ body {
 
 a {
     text-decoration: none;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 a:visited {
@@ -53,10 +56,6 @@ a:visited {
     background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-#tagline {
-    font-family: "Bad Script", serif;
 }
 
 #search-bar {
@@ -171,6 +170,12 @@ a:visited {
     color: #ECF0F3
 }
 
+.url {
+    font-size: 12px;
+    color: #77c7f4;
+    line-height: 32px;
+}
+
 /* page numbers */
 
 #page-number-container {
@@ -183,5 +188,8 @@ a:visited {
 .page-numbers {
     display: inline-block;
     padding: 0.5rem;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
