@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Schibsted+Grotesk:wght@400;500;600;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Schibsted Grotesk", sans-serif;
+}
+
 html, 
 body {
     margin: 0;
     padding: 0;
-    background-color: #ECF0F3;
+    background-color: #000119;
 }
+
 a {
     text-decoration: none;
 }
@@ -18,6 +25,7 @@ a:visited {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    width: 80%;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -30,27 +38,21 @@ a:visited {
 }
 
 .home-container {
-    border-radius: 24px;
-    background: #ECF0F3;
-    box-shadow: -16px 16px 31px #c9cccf,
-                16px -16px 31px #ffffff;
-    color: #263037;
+    color: #ECF0F3;
     font-size: 18px;
-    margin: 0 auto;
     width: 100%;
-    padding: 15px 20px;
-    /* border: 2px solid #FFF; */
     text-align: center;
 }
 
 #logo {
-    font-family: "Schibsted Grotesk", sans-serif;
     font-size: 16rem;
+    font-weight: bold;
     margin: 0;
     padding: 0;
     text-align: center;
-    font-weight: bold;
-    color: #263037;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #tagline {
@@ -63,12 +65,12 @@ a:visited {
 
 .search-box {
     width: 100%;
-    font-family: "Bad Script", serif;
+    color: #ECF0F3;
 }
 
 #home-page #search-bar .search-button {
     color: #ECF0F3;
-    background-color: #263037;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     border: none;
     border-radius: 3px;
     height: 36px;
@@ -101,7 +103,6 @@ a:visited {
     width: 150px;
     padding: 5px 10px;
     box-sizing: border-box;
-    font-family: "Schibsted Grotesk", sans-serif;
 }
 
 .search-page-header {
@@ -118,7 +119,7 @@ a:visited {
 
 #search-page #search-bar .search-button {
     color: #ECF0F3;
-    background-color: #263037;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     border: none;
     border-radius: 3px;
     height: 36px;
@@ -126,7 +127,6 @@ a:visited {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    font-family: "Schibsted Grotesk", sans-serif;
 }
 
 #search-page #search-bar .search-box {
@@ -138,7 +138,6 @@ a:visited {
     box-sizing: border-box;
     font-size: 18px;
     width: 40%;
-    font-family: "Bad Script", sans-serif;
 }
 
 /* search tab styles */
@@ -159,7 +158,7 @@ a:visited {
 }
 
 .tab-list li.active {
-    border: 2px solid #263037;
+    border: 2px solid #ECF0F3;
     border-radius: 6px;
     font-weight: bold;
 }
@@ -169,7 +168,7 @@ a:visited {
 #resultsDisplay {
     margin-left: 70px;
     margin-right: 70px;
-    font-family: "Schibsted Grotesk", sans-serif;
+    color: #ECF0F3
 }
 
 /* page numbers */

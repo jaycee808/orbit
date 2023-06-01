@@ -177,6 +177,21 @@ function removeLinks() {
 // $fourthURL = "https://www.independent.co.uk/";
 // findLinks($fourthURL);
 
-$fifthURL = "https://www.rollingstone.com/";
-findLinks($fifthURL);
+// $fifthURL = "https://www.rollingstone.com/";
+// findLinks($fifthURL);
+
+// $sevenURL = "https://www.imdb.com";
+// findLinks($sevenURL);
+
+// $nineURL = "https://pitchfork.com/";
+// findLinks($nineURL);
+
+// $tenURL = "https://variety.com/";
+// findLinks($tenURL);
+
+// $thirteenURL = "https://www.residentadvisor.net/";
+// findLinks($thirteenURL);
+
+$fourteenURL = "https://www.tripadvisor.co.uk/";
+findLinks($fourteenURL);
 ?>
