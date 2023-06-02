@@ -56,43 +56,15 @@ include("config.php");
     <div id="resultsDisplay">
 
     <?php
-        $resultsProvider = new searchResults($connection);
-        $pageLimit = 20;
-        $numResults = $resultsProvider->getNumResults($term);
+        $search = new searchResults($connection);
 
-        echo "<p class='resultsCount'>$numResults results found</p>";
+        $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
+        $numOfResultsPerPage = 20;
 
-        echo $resultsProvider->resultsPages($pageIndex, $pageLimit, $term);
+        echo $search->resultsPages($pageIndex, $numOfResultsPerPage, $term);
     ?>
     </div>
 
-    <!-- section for page index -->
-    
-    <div id="page-number-container">
-        <div class="page-numbers">
-        <?php
-            $currentPage = 1;
-            $pagesLeft = 5;
 
-            while($pagesLeft != 0) {
-
-                if($currentPage == $pageIndex) {
-                    echo "<div class='page-numbers'>
-                    <h3 class='pageNumber'>$currentPage</h3>
-                </div>";
-                } else {
-                    echo "<div class='page-numbers'>
-                    <a href='search.php?term=$term&type=$type&page=$currentPage'>
-                        <h3 class='pageNumber'>$currentPage</h3>
-                    </a>
-                </div>";
-                }
-
-                $currentPage++;
-                $pagesLeft--;
-            }
-        ?>
-        </div>
-    </div>
 </body>
 </html>

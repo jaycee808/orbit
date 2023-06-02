@@ -23,10 +23,13 @@ class searchResults {
 		return $row["total"];
 	}
 
-	public function resultsPages($pageIndex, $numOfResults, $term) {
+	public function resultsPages($pageIndex, $numOfResultsPerPage, $term) {
 
-		$displayResults = ($pageIndex - 1) * $numOfResults;
-
+		$totalResults = $this->getNumResults($term);
+		$totalPages = ceil($totalResults / $numOfResultsPerPage);
+	
+		$displayResults = ($pageIndex - 1) * $numOfResultsPerPage;
+	
 		$query = $this->connection->prepare("SELECT * 
 									FROM pages WHERE title LIKE :term 
 									OR url LIKE :term 
@@ -34,23 +37,23 @@ class searchResults {
 									OR description LIKE :term
 									ORDER BY clicks DESC
 									LIMIT :displayResults, :numOfResults");
-
-		$searchTerm = "%". $term . "%";
+	
+		$searchTerm = "%" . $term . "%";
 		$query->bindParam(":term", $searchTerm);
 		$query->bindParam(":displayResults", $displayResults, PDO::PARAM_INT);
-		$query->bindParam(":numOfResults", $numOfResults, PDO::PARAM_INT);
+		$query->bindParam(":numOfResults", $numOfResultsPerPage, PDO::PARAM_INT);
 		$query->execute();
-
+	
 		$resultsHtml = "<div class='searchResults'>";
-
-		while($row = $query->fetch(PDO::FETCH_ASSOC)) {
+	
+		while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 			$id = $row["id"];
 			$url = $row["url"];
 			$title = $row["title"];
 			$description = $row["description"];
-			
-			$resultsHtml .= 
-			"<div class='resultContainer'>
+	
+			$resultsHtml .=
+				"<div class='resultContainer'>
 				<h3 class='title'>
 					<a class='result' href='$url'>
 					$title
@@ -60,10 +63,19 @@ class searchResults {
 					<span class='description'>$description</span>
 			</div>";
 		}
-
+	
 		$resultsHtml .= "</div>";
-
+	
+		// Add page links
+		$resultsHtml .= "<div class='pagination'>";
+		for ($page = 1; $page <= $totalPages; $page++) {
+			$resultsHtml .= "<a href='search.php?term=$term&page=$page'>$page</a>";
+		}
+		$resultsHtml .= "</div>";
+	
 		return $resultsHtml;
 	}
+	
 }
 ?>
+
