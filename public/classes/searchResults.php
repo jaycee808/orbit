@@ -57,14 +57,16 @@ class searchResults {
 			
 			$resultsHtml .=
 				"<div class='resultContainer'>
-				<h3 class='title'>
-					<a class='result' href='$url'>
-					$title
-					</a>
-				</h3>
-					<span class='url'>$url</span><br />
-					<span class='description'>$description</span>
-			</div>";
+					<div class='resultDetail'>
+						<h3 class='title'>
+						<a class='result' href='$url'>
+						$title
+						</a>
+						</h3>
+						<span class='url'>$url</span><br />
+						<span class='description'>$description</span>
+					</div>
+				</div>";
 		}
 	
 		$resultsHtml .= "</div>";
