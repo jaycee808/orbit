@@ -43,15 +43,18 @@ class searchResults {
 		$query->bindParam(":displayResults", $displayResults, PDO::PARAM_INT);
 		$query->bindParam(":numOfResults", $numOfResultsPerPage, PDO::PARAM_INT);
 		$query->execute();
-	
-		$resultsHtml = "<div class='searchResults'>";
+		
+					// Add total number of results
+		$resultsHtml = "<div class='totalResults'>Total results: $totalResults</div>";
+
+		$resultsHtml .= "<div class='searchResults'>";
 	
 		while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 			$id = $row["id"];
 			$url = $row["url"];
 			$title = $row["title"];
 			$description = $row["description"];
-	
+			
 			$resultsHtml .=
 				"<div class='resultContainer'>
 				<h3 class='title'>
@@ -65,7 +68,7 @@ class searchResults {
 		}
 	
 		$resultsHtml .= "</div>";
-	
+
 		// Add page links
 		$resultsHtml .= "<div class='pagination'>";
 		for ($page = 1; $page <= $totalPages; $page++) {
@@ -78,4 +81,3 @@ class searchResults {
 	
 }
 ?>
-

@@ -60,7 +60,7 @@ include("config.php");
 
         $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
         $numOfResultsPerPage = 20;
-
+        
         echo $search->resultsPages($pageIndex, $numOfResultsPerPage, $term);
     ?>
     </div>
