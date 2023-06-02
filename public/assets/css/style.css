@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@1,100;1,200;1,300;1,400&family=Schibsted+Grotesk:wght@400;500;600;900&display=swap');
-* {
-    box-sizing: border-box;
-}
 
-html, 
+/* Global Styles */
+
+html,
 body {
     margin: 0;
     padding: 0;
@@ -14,18 +13,21 @@ a {
     text-decoration: none;
     background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 
 a:visited {
-    text-decoration: none;
-    color: inherit; 
+    color: inherit;
 }
+
+/* Home Page */
 
 #home-page {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
     width: 80%;
     text-align: center;
     justify-content: center;
@@ -34,7 +36,6 @@ a:visited {
     position: absolute;
     top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -46,14 +47,16 @@ a:visited {
 
 #logo {
     font-family: "Schibsted Grotesk", sans-serif;
-    font-size: 18rem;
+    font-size: 14rem;
     font-weight: bold;
     margin: 0;
     padding: 0;
     text-align: center;
     background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 
 #tagline {
@@ -77,19 +80,19 @@ a:visited {
 
 #home-page #search-bar .search-box {
     background: transparent;
-    border: 2px solid #ECF0F3;
+    border: 2px solid #ecf0f3;
     border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
     height: 34px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 18px;
-    width: 40%;
-    color: #ECF0F3;
+    width: 450px;
+    color: #ecf0f3;
     font-family: "Roboto Serif", serif;
 }
 
-/* search results styles */
+/* Search Page */
 
 #search-page {
     display: grid;
@@ -113,7 +116,7 @@ a:visited {
     justify-content: space-between;
 }
 
-/* search results search bar */
+/* Search Results Search Bar */
 
 #search-page #search-bar .search-button {
     color: #000119;
@@ -130,22 +133,20 @@ a:visited {
 
 #search-page #search-bar .search-box {
     border: none;
-    border: 2px solid #ECF0F3;
+    border: 2px solid #ecf0f3;
     border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
     height: 34px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 18px;
     width: 300px;
     font-family: "Roboto Serif", serif;
-    color: #ECF0F3;
+    color: #ecf0f3;
     background: transparent;
 }
 
-
-
-/* search tab styles */
+/* Search Tabs */
 
 .search-tabs {
     margin-left: 70px;
@@ -163,20 +164,23 @@ a:visited {
 }
 
 .tab-list li.active {
-    border: 2px solid #ECF0F3;
+    border: 2px solid #ecf0f3;
     border-radius: 3px;
     font-weight: bold;
 }
 
-/* search results */ 
+/* Search Results */
 
 #resultsDisplay {
     margin-left: 70px;
     margin-right: 70px;
-    color: #ECF0F3;
+    color: #ecf0f3;
 }
 
-.title, .result, .description, .totalResults {
+.title,
+.result,
+.description,
+.totalResults {
     font-family: "Schibsted Grotesk", sans-serif;
 }
 
@@ -200,19 +204,127 @@ a:visited {
     padding: 0.1rem;
 }
 
-/* page numbers */
+/* Page Numbers */
 
 #page-number-container {
     position: relative;
-    bottom: 0px;
+    bottom: 0;
     margin-left: 60px;
 }
 
 .pagination {
     background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 32px;
 }
 
+/* Media Queries */
+
+@media screen and (max-width: 800px) {
+    #logo {
+        font-size: 10rem;
+    }
+    
+    #tagline {
+        font-size: 14px;
+    }
+    
+    #home-page #search-bar .search-box {
+        font-size: 18px;
+        width: 250px;
+    }
+
+    #search-page #search-bar .search-button {
+        width: 80px;
+    }
+    
+    #search-page #search-bar .search-box {
+        width: 160px;
+    }
+
+    .search-page-header {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .search-tabs {
+        margin-left: 20px;
+    }
+
+    #resultsDisplay {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    #home-page #search-bar .search-button {
+        width: 80px;
+    }
+    
+    #home-page #search-bar .search-box {
+        font-size: 18px;
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #logo {
+        font-size: 8rem;
+    }
+    
+    #tagline {
+        font-size: 12px;
+    }
+    
+    #home-page #search-bar .search-button {
+        width: 70px;
+        font-size: 16px;
+    }
+    
+    #home-page #search-bar .search-box {
+        font-size: 18px;
+        width: 200px;
+    }
+
+    #search-page-header {
+        display: block;
+        margin-left: 8px;
+        margin-right: 8px;
+        box-sizing: border-box;
+    }
+
+    .search-page-header #logo {
+        font-size: 2rem;
+    }
+    
+    #search-page #search-bar .search-button {
+        height: 34px;
+        font-size: 18px;
+    }
+    
+    #search-page #search-bar .search-box {
+        height: 34px;
+        padding: 0px;
+        font-size: 18px;
+        width: 200px;
+    }
+    
+    #search-page #search-bar {
+        display: flex;
+    }
+    
+    #search-page #search-bar .search-box {
+        width: 100%;
+    }
+    
+    #search-page #search-bar .search-button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
