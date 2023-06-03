@@ -7,7 +7,6 @@
 <body>
     <div id="home-page">
         <header id="logo">orbit</header>
-        <div class="home-container">
             <div id="tagline">
                 <h2>search a universe of information</h2>
             </div>
@@ -17,7 +16,6 @@
                     <input class="search-button" type="submit" value="Search">
                 </form>
             </div>
-        </div>
     </div>
 </body>
 </html>

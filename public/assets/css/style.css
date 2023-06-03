@@ -22,7 +22,7 @@ a:visited {
     color: inherit;
 }
 
-/* Home Page */
+/* Home page */
 
 #home-page {
     display: flex;
@@ -34,15 +34,9 @@ a:visited {
     align-items: center;
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.home-container {
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
 }
 
 #logo {
@@ -274,6 +268,11 @@ a:visited {
 }
 
 @media screen and (max-width: 480px) {
+    #home-page {
+        width: 80%;
+        top: 30%;
+    }
+    
     #logo {
         font-size: 8rem;
     }
@@ -299,32 +298,25 @@ a:visited {
         box-sizing: border-box;
     }
 
+    #search-page #search-bar {
+        display: flex;
+    }
+
     .search-page-header #logo {
         font-size: 2rem;
     }
     
     #search-page #search-bar .search-button {
-        height: 34px;
+        height: 340px;
         font-size: 18px;
+        /* margin-top: 10px;
+        width: 100%; */
     }
     
     #search-page #search-bar .search-box {
-        height: 34px;
+        height: 340px;
         padding: 0px;
         font-size: 18px;
         width: 200px;
-    }
-    
-    #search-page #search-bar {
-        display: flex;
-    }
-    
-    #search-page #search-bar .search-box {
-        width: 100%;
-    }
-    
-    #search-page #search-bar .search-button {
-        margin-top: 10px;
-        width: 100%;
     }
 }
