@@ -215,7 +215,10 @@ a:visited {
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
     font-family: "Schibsted Grotesk", sans-serif;
-    font-size: 32px;
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Media Queries */
