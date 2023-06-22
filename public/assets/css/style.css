@@ -198,8 +198,12 @@ a:visited {
     font-family: "Schibsted Grotesk", sans-serif;
 }
 
+.title {
+    font-size: 26px;
+}
+
 .url {
-    font-size: 12px;
+    font-size: 14px;
     color: #77c7f4;
     line-height: 32px;
     font-family: "Roboto Serif", serif;
