@@ -179,14 +179,14 @@ function removeLinks() {
 // $thirdURL = "https://inews.co.uk/";
 // findLinks($thirdURL);
 
-$fourthURL = "https://www.independent.co.uk/";
-findLinks($fourthURL);
+// $fourthURL = "https://www.independent.co.uk/";
+// findLinks($fourthURL);
 
 // $fifthURL = "https://www.rottentomatoes.com/";
 // findLinks($fifthURL);
 
-// $fifthURL = "https://www.rollingstone.com/";
-// findLinks($fifthURL);
+$fifthURL = "https://www.rollingstone.com/";
+findLinks($fifthURL);
 
 // $sevenURL = "https://www.imdb.com";
 // findLinks($sevenURL);

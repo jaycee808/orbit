@@ -315,8 +315,8 @@ a:visited {
     #search-page #search-bar .search-button {
         height: 340px;
         font-size: 18px;
-        /* margin-top: 10px;
-        width: 100%; */
+        margin-top: 10px;
+        width: 100%;
     }
     
     #search-page #search-bar .search-box {
@@ -324,5 +324,10 @@ a:visited {
         padding: 0px;
         font-size: 18px;
         width: 200px;
+    }
+
+    #resultsDisplay {
+        margin-left: 8px;
+        margin-right: 8px;
     }
 }
