@@ -133,6 +133,8 @@ function addLinkToDatabase($url, $title, $description, $keywords) {
         echo "Connection failed: " . $e->getMessage();
         return false;
     }
+
+    removeLinks($url);
 }
 
 // function to check for duplicate links
@@ -165,8 +167,8 @@ function removeLinks() {
     }
 }
 
-$firstURL = "https://www.theguardian.com";
-findLinks($firstURL);
+// $firstURL = "https://www.theguardian.com";
+// findLinks($firstURL);
 
 // $secondURL = "https://www.bbc.co.uk";
 // findLinks($secondURL);
@@ -197,4 +199,17 @@ findLinks($firstURL);
 
 // $fourteenURL = "https://www.tripadvisor.co.uk/";
 // findLinks($fourteenURL);
+
+// $fourteenURL = "https://www.msn.com/";
+// findLinks($fourteenURL);
+
+// $sixteenURL = "https://www.buzzfeed.com/";
+// findLinks($sixteenURL);
+
+// $seventeenURL = "https://www.nypost.com/";
+// findLinks($seventeenURL);
+
+// $eighteenURL = "https://www.gq-magazine.co.uk/";
+// findLinks($eighteenURL);
+
 ?>
