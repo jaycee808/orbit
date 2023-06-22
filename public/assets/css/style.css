@@ -199,7 +199,11 @@ a:visited {
 }
 
 .title {
-    font-size: 26px;
+    font-size: 32px;
+}
+
+.description {
+    font-size: 30px;
 }
 
 .url {
