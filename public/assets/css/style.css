@@ -86,14 +86,14 @@ a:visited {
     font-family: "Roboto Serif", serif;
 }
 
-/* Search Page */
-
-#search-icon {
+#home-page #search-bar .search-icon {
     color: #00a2ff;
     background: transparent;
     border: none;
-    height: 30px;
+    font-size: 20px;
 }
+
+/* Search Page */
 
 #search-page {
     display: grid;
@@ -112,9 +112,9 @@ a:visited {
     border-bottom: 1px solid #00a2ff;
     height: 160px;
     box-sizing: border-box;
-    margin-left: 70px;
-    margin-right: 70px;
-    justify-content: space-evenly;
+    margin-left: 40px;
+    margin-right: 40px;
+    justify-content: space-between;
 }
 
 /* Search Results Search Bar */
@@ -151,10 +151,17 @@ a:visited {
     background: transparent;
 }
 
+#search-page #search-bar .search-icon {
+    color: #00a2ff;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+}
+
 /* Search Tabs */
 
 .search-tabs {
-    margin-left: 70px;
+    margin-left: 40px;
 }
 
 .tab-list {
@@ -179,8 +186,8 @@ a:visited {
 /* Search Results */
 
 #resultsDisplay {
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 40px;
+    margin-right: 40px;
     color: #ecf0f3;
 }
 
@@ -216,7 +223,7 @@ a:visited {
 #page-number-container {
     position: relative;
     bottom: 0;
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 .pagination {
@@ -261,8 +268,8 @@ a:visited {
     }
 
     .search-page-header {
-        margin-left: 16px;
-        margin-right: 16px;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
     .search-tabs {
@@ -270,8 +277,8 @@ a:visited {
     }
 
     #resultsDisplay {
-        margin-left: 16px;
-        margin-right: 16px;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 
 }
@@ -302,8 +309,8 @@ a:visited {
 
     #search-page-header {
         display: block;
-        margin-left: 8px;
-        margin-right: 8px;
+        margin-left: 12px;
+        margin-right: 12px;
         box-sizing: border-box;
     }
 
@@ -316,7 +323,7 @@ a:visited {
     }
 
     #resultsDisplay {
-        margin-left: 8px;
-        margin-right: 8px;
+        margin-left: 12px;
+        margin-right: 12px;
     }
 }
