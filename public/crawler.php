@@ -182,8 +182,8 @@ function removeLinks() {
 // $fourthURL = "https://www.independent.co.uk/";
 // findLinks($fourthURL);
 
-$fifthURL = "https://www.msn.com/en-gb";
-findLinks($fifthURL);
+// $fifthURL = "https://www.msn.com/en-gb";
+// findLinks($fifthURL);
 
 // $fifthURL = "https://www.rollingstone.com/";
 // findLinks($fifthURL);
@@ -194,8 +194,8 @@ findLinks($fifthURL);
 // $nineURL = "https://pitchfork.com/";
 // findLinks($nineURL);
 
-// $tenURL = "https://variety.com/";
-// findLinks($tenURL);
+$tenURL = "https://variety.com/";
+findLinks($tenURL);
 
 // $thirteenURL = "https://www.residentadvisor.net/";
 // findLinks($thirteenURL);

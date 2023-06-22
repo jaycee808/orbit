@@ -18,6 +18,7 @@ if(isset($_GET["term"])) {
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <title>orbit</title>
 </head>
 <body>
@@ -32,7 +33,7 @@ if(isset($_GET["term"])) {
             <div id="search-bar">
                 <form action="search.php" method="GET">
                     <input class="search-box" type="text" name="term" placeholder="<?php echo $term ?>">
-                    <input class="search-button" type="submit" value="Search">
+                    <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
         </div>

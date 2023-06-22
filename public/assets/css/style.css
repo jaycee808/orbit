@@ -77,7 +77,7 @@ a:visited {
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    height: 60px;
+    height: 40px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 18px;
@@ -88,12 +88,19 @@ a:visited {
 
 /* Search Page */
 
+#search-icon {
+    color: #00a2ff;
+    background: transparent;
+    border: none;
+    height: 30px;
+}
+
 #search-page {
     display: grid;
 }
 
 #search-page #logo {
-    font-size: 4rem;
+    font-size: 2rem;
     padding: 5px 10px;
     box-sizing: border-box;
     font-family: "Schibsted Grotesk", sans-serif;
@@ -134,11 +141,11 @@ a:visited {
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    height: 60px;
+    height: 30px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 18px;
-    width: 300px;
+    width: 80%;
     font-family: "Roboto Serif", serif;
     color: #ecf0f3;
     background: transparent;
