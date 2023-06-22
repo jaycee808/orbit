@@ -107,7 +107,7 @@ a:visited {
     box-sizing: border-box;
     margin-left: 70px;
     margin-right: 70px;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 /* Search Results Search Bar */
