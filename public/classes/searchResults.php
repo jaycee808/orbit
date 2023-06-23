@@ -61,7 +61,7 @@ class searchResults {
             
             // trim variable data
 			$url = $this->trimField($url, 35);
-			$description = $this->trimField($description, 500);
+			$description = $this->trimField($description, 200);
 
             $resultsHtml .=
                 "<div class='resultContainer'>
