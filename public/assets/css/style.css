@@ -235,13 +235,16 @@ a:visited {
 }
 
 .pagination {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.pagination a {
     color: #00a2ff;
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 3rem;
     font-weight: bold;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
 }
 
 /* Media Queries */
