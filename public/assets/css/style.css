@@ -11,11 +11,6 @@ body {
 
 a {
     text-decoration: none;
-    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
 }
 
 a:visited {
@@ -200,6 +195,11 @@ a:visited {
 
 .title {
     font-size: 2em;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 
 .description {
@@ -259,14 +259,14 @@ a:visited {
     }
     
     #tagline {
-        font-size: 14px;
+        font-size: 1em;
     }
     #home-page #search-bar {
         width: 90dvw;
     }
 
     #home-page #search-bar .search-box {
-        font-size: 18px;
+        font-size: 1.5em;
         width: 60dvw;
     }
 
@@ -301,16 +301,16 @@ a:visited {
     }
     
     #tagline {
-        font-size: 12px;
+        font-size: 1em;
     }
     
     #home-page #search-bar .search-button {
         width: 15dvw;
-        font-size: 16px;
+        font-size: 1em;
     }
     
     #home-page #search-bar .search-box {
-        font-size: 18px;
+        font-size: 1em;
         width: 80dvw;
     }
 
