@@ -101,7 +101,7 @@ a:visited {
 
 #search-page #logo {
     font-size: 2rem;
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
     box-sizing: border-box;
     font-family: "Schibsted Grotesk", sans-serif;
 }
@@ -110,7 +110,7 @@ a:visited {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #00a2ff;
-    height: 160px;
+    height: 80px;
     box-sizing: border-box;
     margin-left: 40px;
     margin-right: 40px;
@@ -199,11 +199,11 @@ a:visited {
 }
 
 .title {
-    font-size: 32px;
+    font-size: 2em;
 }
 
 .description {
-    font-size: 30px;
+    font-size: 1.4em;
 }
 
 .url {
@@ -295,10 +295,6 @@ a:visited {
     #home-page {
         width: 100dvw;
         top: 30%;
-    }
-    
-    #logo {
-        font-size: 8rem;
     }
     
     #tagline {
