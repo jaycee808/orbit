@@ -162,14 +162,19 @@ a:visited {
 .tab-list {
     padding: 0;
     margin-top: 12px;
+
 }
 
 .tab-list li {
     display: inline-block;
     padding: 0.5rem;
     font-family: "Schibsted Grotesk", sans-serif;
-    font-size: 24px;
+    font-size: 1.8em;
     height: 32px;
+}
+
+.tab-list li a {
+    color: #09f1b8;
 }
 
 .tab-list li.active {
