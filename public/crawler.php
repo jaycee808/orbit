@@ -167,11 +167,11 @@ function removeLinks() {
     }
 }
 
-// $firstURL = "https://www.theguardian.com";
-// findLinks($firstURL);
+$firstURL = "https://www.theguardian.com";
+findLinks($firstURL);
 
-// $secondURL = "https://www.bbc.co.uk/news";
-// findLinks($secondURL);
+$secondURL = "https://www.bbc.co.uk/news";
+findLinks($secondURL);
 
 // $secondURL = "https://www.nytimes.com/";
 // findLinks($secondURL);
@@ -194,8 +194,8 @@ function removeLinks() {
 // $nineURL = "https://pitchfork.com/";
 // findLinks($nineURL);
 
-$tenURL = "https://variety.com/";
-findLinks($tenURL);
+// $tenURL = "https://variety.com/";
+// findLinks($tenURL);
 
 // $thirteenURL = "https://www.residentadvisor.net/";
 // findLinks($thirteenURL);

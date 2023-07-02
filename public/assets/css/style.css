@@ -95,7 +95,7 @@ a:visited {
 }
 
 #search-page #logo {
-    font-size: 4rem;
+    font-size: 3.2rem;
     /* padding: 5px 10px; */
     box-sizing: border-box;
     font-family: "Schibsted Grotesk", sans-serif;
@@ -140,7 +140,7 @@ a:visited {
     padding: 10px;
     box-sizing: border-box;
     font-size: 18px;
-    width: 80%;
+    width: 60%;
     font-family: "Roboto Serif", serif;
     color: #ecf0f3;
     background: transparent;
