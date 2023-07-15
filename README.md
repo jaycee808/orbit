@@ -6,8 +6,9 @@ Orbit is a search engine designed to provide users with an easy search experienc
 
 ## Technologies used
 
-![JavaScript Badge](https://img.shields.io/badge/Language-JavaScript-blue)
+![JavaScript Badge](https://img.shields.io/badge/Language-php-blue)
 <br>
-![CSS badge](https://img.shields.io/badge/Language-CSS-purple)
+![HTML Badge](https://img.shields.io/badge/Language-mysql-red)
 <br>
-![HTML Badge](https://img.shields.io/badge/Language-HTML-black)
+![CSS badge](https://img.shields.io/badge/Language-CSS-pink)
+
