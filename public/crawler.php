@@ -167,13 +167,19 @@ function removeLinks() {
     }
 }
 
-$firstURL = "https://www.theguardian.com";
-findLinks($firstURL);
+// $firstURL = "https://news.sky.com/uk";
+// findLinks($firstURL);
 
-$secondURL = "https://www.bbc.co.uk/news";
-findLinks($secondURL);
+// $secondURL = "https://www.bbc.co.uk/news";
+// findLinks($secondURL);
 
 // $secondURL = "https://www.nytimes.com/";
+// findLinks($secondURL);
+
+// $secondURL = "https://www.music-news.com/";
+// findLinks($secondURL);
+
+// $secondURL = "https://www.music-news.com/";
 // findLinks($secondURL);
 
 // $thirdURL = "https://inews.co.uk/";
@@ -182,14 +188,14 @@ findLinks($secondURL);
 // $fourthURL = "https://www.independent.co.uk/";
 // findLinks($fourthURL);
 
-// $fifthURL = "https://www.msn.com/en-gb";
+// $fifthURL = "https://www.billboard.com/";
 // findLinks($fifthURL);
+
+// $sevenURL = "https://www.menshealth.com/";
+// findLinks($sevenURL);
 
 // $fifthURL = "https://www.rollingstone.com/";
 // findLinks($fifthURL);
-
-// $sevenURL = "https://www.imdb.com";
-// findLinks($sevenURL);
 
 // $nineURL = "https://pitchfork.com/";
 // findLinks($nineURL);
@@ -203,10 +209,10 @@ findLinks($secondURL);
 // $fourteenURL = "https://www.tripadvisor.co.uk/";
 // findLinks($fourteenURL);
 
-// $fourteenURL = "https://www.msn.com/";
-// findLinks($fourteenURL);
+$fourteenURL = "https://www.womenshealthmag.com/";
+findLinks($fourteenURL);
 
-// $sixteenURL = "https://www.buzzfeed.com/";
+// $sixteenURL = "https://www.nme.com/";
 // findLinks($sixteenURL);
 
 // $seventeenURL = "https://www.nypost.com/";
