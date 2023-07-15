@@ -209,8 +209,8 @@ function removeLinks() {
 // $fourteenURL = "https://www.tripadvisor.co.uk/";
 // findLinks($fourteenURL);
 
-$fourteenURL = "https://www.womenshealthmag.com/";
-findLinks($fourteenURL);
+// $fourteenURL = "https://www.womenshealthmag.com/";
+// findLinks($fourteenURL);
 
 // $sixteenURL = "https://www.nme.com/";
 // findLinks($sixteenURL);
