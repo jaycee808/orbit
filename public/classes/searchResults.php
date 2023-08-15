@@ -1,5 +1,5 @@
 <?php
-class searchResults {
+class SearchResults {
 
     private $connection;
 
@@ -8,7 +8,6 @@ class searchResults {
     }
 
     public function getNumResults($term) {
-
         $query = $this->connection->prepare("SELECT COUNT(*) as total 
                                     FROM pages WHERE title LIKE :term 
                                     OR url LIKE :term 
@@ -24,14 +23,13 @@ class searchResults {
     }
 
     public function resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages) {
-
         $totalResults = $this->getNumResults($term);
         $totalPages = ceil($totalResults / $numOfResultsPerPage);
-        
+
         $pageIndex = max(min($pageIndex, $totalPages), 1);
         $startPage = max(min($pageIndex - floor($maxPages / 2), $totalPages - $maxPages + 1), 1);
         $endPage = min($startPage + $maxPages - 1, $totalPages);
-        
+
         $displayResults = ($pageIndex - 1) * $numOfResultsPerPage;
 
         $query = $this->connection->prepare("SELECT * 
@@ -39,7 +37,7 @@ class searchResults {
                                     OR url LIKE :term 
                                     OR keywords LIKE :term 
                                     OR description LIKE :term
-                                    ORDER BY clicks DESC
+                                    ORDER BY id DESC
                                     LIMIT :displayResults, :numOfResults");
 
         $searchTerm = "%" . $term . "%";
@@ -47,10 +45,8 @@ class searchResults {
         $query->bindParam(":displayResults", $displayResults, PDO::PARAM_INT);
         $query->bindParam(":numOfResults", $numOfResultsPerPage, PDO::PARAM_INT);
         $query->execute();
-        
-        // Add total number of results
-        $resultsHtml = "<div class='totalResults'>Total results: $totalResults</div>";
 
+        $resultsHtml = "<div class='totalResults'>Total results: $totalResults</div>";
         $resultsHtml .= "<div class='searchResults'>";
 
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -58,18 +54,17 @@ class searchResults {
             $url = $row["url"];
             $title = $row["title"];
             $description = $row["description"];
-            
-            // trim variable data
-			$url = $this->trimField($url, 35);
-			$description = $this->trimField($description, 200);
+
+            $url = $this->trimField($url, 35);
+            $description = $this->trimField($description, 200);
 
             $resultsHtml .=
                 "<div class='resultContainer'>
                     <div class='resultDetail'>
                         <h3 class='title'>
-                        <a class='result' href='$url'>
-                        $title
-                        </a>
+                            <a class='result' href='$url'>
+                                $title
+                            </a>
                         </h3>
                         <span class='url'>$url</span><br />
                         <span class='description'>$description</span>
@@ -79,7 +74,6 @@ class searchResults {
 
         $resultsHtml .= "</div>";
 
-        // Add page links
         $resultsHtml .= "<div class='pagination'>";
         for ($page = $startPage; $page <= $endPage; $page++) {
             $resultsHtml .= "<a href='search.php?term=$term&page=$page'>$page</a>";
@@ -90,9 +84,8 @@ class searchResults {
     }
 
     private function trimField($string, $characterLimit) {
-
-		$dots = strlen($string) > $characterLimit ? "..." : "";
-		return substr($string, 0, $characterLimit) . $dots;
-	}
+        $dots = strlen($string) > $characterLimit ? "..." : "";
+        return substr($string, 0, $characterLimit) . $dots;
+    }
 }
 ?>

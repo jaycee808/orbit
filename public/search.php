@@ -56,7 +56,7 @@ if(isset($_GET["term"])) {
         $search = new searchResults($connection);
         $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
         $numOfResultsPerPage = 20;
-        $maxPages = 6;
+        $maxPages = 10;
 
         echo $search->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
         ?>
