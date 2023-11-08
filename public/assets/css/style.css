@@ -31,7 +31,7 @@ a:visited {
     height: 100dvh;
 }
 
-#logo {
+#home-page .logo {
     font-family: "Schibsted Grotesk", sans-serif;
     font-size: 14rem;
     font-weight: bold;
@@ -45,14 +45,14 @@ a:visited {
     text-fill-color: transparent;
 }
 
-#tagline {
+#home-page .tagline {
     color: #ecf0f3;
     font-family: "Satisfy", serif;
     font-style: italic;
     font-size: 2rem;
 }
 
-#home-page #search-bar .search-button {
+#home-page .search-bar .search-button {
     color: #000119;
     background: #00a2ff;
     border: none;
@@ -65,21 +65,20 @@ a:visited {
     font-family: "Schibsted Grotesk", sans-serif;
 }
 
-#home-page #search-bar .search-box {
+#home-page .search-bar .search-box {
     background: transparent;
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
     height: 40px;
-    padding: 10px;
-    box-sizing: border-box;
+    padding: 12px;
     font-size: 18px;
     width: 450px;
     color: #ecf0f3;
     font-family: "Satisfy", serif;
 }
 
-#home-page #search-bar .search-icon {
+#home-page .search-bar .search-icon {
     color: #00a2ff;
     background: transparent;
     border: none;
@@ -91,8 +90,6 @@ a:visited {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0;
-    margin-left: 24px;
-    margin-right: 24px;
 }
 
 .search-list li {
@@ -114,102 +111,70 @@ a:visited {
 /* Search Page */
 
 #search-page {
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 
-#search-page #logo {
-    font-size: 3.2rem;
-    /* padding: 5px 10px; */
-    box-sizing: border-box;
+.search-page-logo {
     font-family: "Schibsted Grotesk", sans-serif;
+    font-size: 6em;
+    font-weight: bold;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
 }
 
 .search-page-header {
     display: flex;
-    align-items: center;
-    border-bottom: 1px solid #00a2ff;
-    height: 140px;
-    box-sizing: border-box;
-    margin-left: 40px;
-    margin-right: 40px;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 0.25rem;
+    border-bottom: 1px solid #00a2ff;
 }
 
 /* Search Results Search Bar */
 
-#search-bar {
-    display: block;
-}
-
-#search-page #search-bar .search-button {
+#search-page .search-bar .search-button {
     color: #000119;
     background: #00a2ff;
     border: none;
     border-radius: 3px;
     height: 62px;
-    width: 150px;
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    font-family: "Schibsted Grotesk", sans-serif;
 }
 
-#search-page #search-bar .search-box {
-    border: none;
+#search-page .search-bar .search-box {
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
     height: 3rem;
-    padding: 10px;
-    box-sizing: border-box;
+    padding: 1px;
     font-size: 18px;
-    width: 60%;
+    width: 300px;
     font-family: "Satisfy", serif;
     color: #ecf0f3;
     background: transparent;
 }
 
-#search-page #search-bar .search-icon {
+#search-page .search-bar .search-icon {
     color: #00a2ff;
     background: transparent;
     border: none;
     font-size: 1.5rem;
 }
 
-/* Search Tabs */
-
-.search-tabs {
-    margin-left: 40px;
-}
-
-.tab-list {
-    padding: 0;
-    margin-top: 12px;
-}
-
-.tab-list li {
-    display: inline-block;
-    padding: 0.5rem;
-    font-family: "Schibsted Grotesk", sans-serif;
-    font-size: 1.8em;
-    height: 32px;
-}
-
-.tab-list li a {
-    color: #09f1b8;
-}
-
-.tab-list li.active {
-    border: 2px solid #ecf0f3;
-    border-radius: 3px;
-    font-weight: bold;
-}
-
 /* Search Results */
 
 #resultsDisplay {
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-left: 12px;
+    margin-right: 12px;
     color: #ecf0f3;
 }
 
@@ -243,13 +208,13 @@ a:visited {
 .resultContainer {
     border: 1px solid rgba(242, 242, 242, 0.311);
     border-radius: 3px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .resultDetail {
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin-left: 12px;
+    margin-bottom: 12px;
     padding: 0.1rem;
 }
 
@@ -258,7 +223,7 @@ a:visited {
 #page-number-container {
     position: relative;
     bottom: 0;
-    margin-left: 40px;
+    margin-left: 12px;
 }
 
 .pagination {
@@ -276,88 +241,3 @@ a:visited {
 
 /* Media Queries */
 
-/* @media screen and (max-width: 800px) {
-    #home-page {
-        width: 90dvw;
-    }
-    
-    #logo {
-        font-size: 10rem;
-    }
-    
-    #tagline {
-        font-size: 1em;
-    }
-    #home-page #search-bar {
-        width: 90dvw;
-    }
-
-    #home-page #search-bar .search-box {
-        font-size: 1.5em;
-        width: 60dvw;
-    }
-
-    #search-page #search-bar .search-button {
-        width: 40dvw;
-    }
-    
-    #search-page #search-bar .search-box {
-        width: 40dvw;
-    }
-
-    .search-page-header {
-        margin-left: 12px;
-        margin-right: 12px;
-    }
-
-    .search-tabs {
-        margin-left: 16px;
-    }
-
-    #resultsDisplay {
-        margin-left: 12px;
-        margin-right: 12px;
-    }
-
-}
-
-@media screen and (max-width: 480px) {
-    #home-page {
-        width: 100dvw;
-        top: 30%;
-    }
-    
-    #tagline {
-        font-size: 1em;
-    }
-    
-    #home-page #search-bar .search-button {
-        width: 15dvw;
-        font-size: 1em;
-    }
-    
-    #home-page #search-bar .search-box {
-        font-size: 1em;
-        width: 80dvw;
-    }
-
-    #search-page-header {
-        display: block;
-        margin-left: 12px;
-        margin-right: 12px;
-        box-sizing: border-box;
-    }
-
-    #search-page #search-bar {
-        display: flex;
-    }
-
-    .search-page-header #logo {
-        font-size: 2.5rem;
-    }
-
-    #resultsDisplay {
-        margin-left: 12px;
-        margin-right: 12px;
-    }
-} */

@@ -24,12 +24,12 @@ if(isset($_GET["term"])) {
     <!-- header with logo and search bar -->
     <div id="search-page">
         <div class="search-page-header">
-            <div id="logo">
+            <div class="search-page-logo">
                 <a href="./index.php">
-                    <h1>orbit</h1>
+                    orbit
                 </a>
             </div>
-            <div id="search-bar">
+            <div class="search-bar">
                 <form action="search.php" method="GET">
                     <input class="search-box" type="text" name="term" placeholder="<?php echo $term ?>">
                     <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -56,7 +56,7 @@ if(isset($_GET["term"])) {
                 </li>
             </ul>
         </div> -->
-    </div>
+    
 
     <!-- section to display search results -->
     <div id="resultsDisplay">
@@ -68,6 +68,7 @@ if(isset($_GET["term"])) {
 
         echo $search->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
         ?>
+    </div>
     </div>
 </body>
 </html>

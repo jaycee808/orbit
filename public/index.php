@@ -7,18 +7,17 @@
 </head>
 <body>
     <div id="home-page">
-        <header id="logo">orbit</header>
-            <div id="tagline">
+        <header class="logo">orbit</header>
+            <div class="tagline">
                 <h2>search a universe of information</h2>
             </div>
-            <div id="search-bar">
+            <div class="search-bar">
                 <form action="search.php" method="GET">
                     <input class="search-box" type="text" name="term" placeholder="Let's explore">
                     <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
             <div class="quick-searches">
-                <h3>Quick Searches</h3>
                 <ul class="search-list">
                     <li><a href="search.php?term=politics">Politics</a></li>
                     <li><a href="search.php?term=entertainment">Entertainment</a></li>
