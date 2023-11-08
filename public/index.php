@@ -17,6 +17,15 @@
                     <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
+            <div class="quick-searches">
+                <h3>Quick Searches</h3>
+                <ul class="search-list">
+                    <li><a href="search.php?term=politics">Politics</a></li>
+                    <li><a href="search.php?term=entertainment">Entertainment</a></li>
+                    <li><a href="search.php?term=sport">Sport</a></li>
+                    <li><a href="search.php?term=business">Business</a></li>
+                </ul>
+            </div>
     </div>
 </body>
 </html>

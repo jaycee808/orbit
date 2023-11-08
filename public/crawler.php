@@ -173,9 +173,6 @@ function removeLinks() {
 // $secondURL = "https://www.bbc.co.uk/news";
 // findLinks($secondURL);
 
-// $secondURL = "https://www.nytimes.com/";
-// findLinks($secondURL);
-
 // $secondURL = "https://www.music-news.com/";
 // findLinks($secondURL);
 
@@ -194,11 +191,8 @@ function removeLinks() {
 // $sevenURL = "https://www.menshealth.com/";
 // findLinks($sevenURL);
 
-// $fifthURL = "https://www.rollingstone.com/";
-// findLinks($fifthURL);
-
-// $nineURL = "https://pitchfork.com/";
-// findLinks($nineURL);
+$nineURL = "https://pitchfork.com/";
+findLinks($nineURL);
 
 // $tenURL = "https://variety.com/";
 // findLinks($tenURL);
@@ -218,7 +212,7 @@ function removeLinks() {
 // $seventeenURL = "https://www.nypost.com/";
 // findLinks($seventeenURL);
 
-// $eighteenURL = "https://www.gq-magazine.co.uk/";
+// $eighteenURL = "https://www.huffingtonpost.co.uk/";
 // findLinks($eighteenURL);
 
 ?>

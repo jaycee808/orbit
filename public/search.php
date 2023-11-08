@@ -11,7 +11,6 @@ if(isset($_GET["term"])) {
     exit("Please enter a search value");
 }
 
-// echo $_GET["term"];
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +37,17 @@ if(isset($_GET["term"])) {
             </div>
         </div>
 
+        <div class="quick-searches">
+                <ul class="search-list">
+                    <li><a href="search.php?term=politics">Politics</a></li>
+                    <li><a href="search.php?term=entertainment">Entertainment</a></li>
+                    <li><a href="search.php?term=sport">Sport</a></li>
+                    <li><a href="search.php?term=business">Business</a></li>
+                </ul>
+        </div>
+
         <!-- tabs to filter search results -->
-        <div class="search-tabs">
+        <!-- <div class="search-tabs">
             <ul class="tab-list">
                 <li class="<?php echo $type == 'pages' ? 'active' : '' ?>">
                     <a href='<?php echo "search.php?term=$term&type=pages"; ?>'>
@@ -47,7 +55,7 @@ if(isset($_GET["term"])) {
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </div>
 
     <!-- section to display search results -->
