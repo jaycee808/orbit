@@ -55,17 +55,17 @@ class SearchResults {
             $title = $row["title"];
             $description = $row["description"];
 
-            $url = $this->trimField($url, 35);
+            $url = $this->trimField($url, 60);
             $description = $this->trimField($description, 200);
 
             $resultsHtml .=
                 "<div class='resultContainer'>
                     <div class='resultDetail'>
-                        <h3 class='title'>
+                        <div class='title'>
                             <a class='result' href='$url'>
                                 $title
                             </a>
-                        </h3>
+                        </div>
                         <span class='url'>$url</span><br />
                         <span class='description'>$description</span>
                     </div>
