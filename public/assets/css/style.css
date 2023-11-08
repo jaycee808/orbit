@@ -91,6 +91,8 @@ a:visited {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 .search-list li {
