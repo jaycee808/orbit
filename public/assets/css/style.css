@@ -33,7 +33,7 @@ a:visited {
 
 #home-page .logo {
     font-family: "Schibsted Grotesk", sans-serif;
-    font-size: 14rem;
+    font-size: 12rem;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -50,6 +50,7 @@ a:visited {
     font-family: "Satisfy", serif;
     font-style: italic;
     font-size: 2rem;
+    margin-bottom: 12px;
 }
 
 #home-page .search-bar .search-button {
@@ -68,8 +69,8 @@ a:visited {
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    height: 40px;
-    padding: 12px;
+    height: 28px;
+    padding: 0.5rem;
     font-size: 2em;
     width: 450px;
     color: #ecf0f3;

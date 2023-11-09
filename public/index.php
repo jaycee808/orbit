@@ -9,7 +9,7 @@
     <div id="home-page">
         <header class="logo">orbit</header>
             <div class="tagline">
-                <h2>search a universe of information</h2>
+                search a universe of information
             </div>
             <div class="search-bar">
                 <form action="search.php" method="GET">

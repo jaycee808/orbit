@@ -191,8 +191,8 @@ function removeLinks() {
 // $sevenURL = "https://www.menshealth.com/";
 // findLinks($sevenURL);
 
-$nineURL = "https://pitchfork.com/";
-findLinks($nineURL);
+// $nineURL = "https://pitchfork.com/";
+// findLinks($nineURL);
 
 // $tenURL = "https://variety.com/";
 // findLinks($tenURL);
@@ -200,8 +200,8 @@ findLinks($nineURL);
 // $thirteenURL = "https://www.residentadvisor.net/";
 // findLinks($thirteenURL);
 
-// $fourteenURL = "https://www.tripadvisor.co.uk/";
-// findLinks($fourteenURL);
+$fourteenURL = "https://www.tripadvisor.co.uk/";
+findLinks($fourteenURL);
 
 // $fourteenURL = "https://www.womenshealthmag.com/";
 // findLinks($fourteenURL);
