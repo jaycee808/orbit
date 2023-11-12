@@ -69,7 +69,7 @@ a:visited {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
     height: 28px;
     padding: 0.5rem;
-    font-size: 2em;
+    font-size: 2rem;
     width: 450px;
     color: #ecf0f3;
     font-family: "Satisfy", serif;
@@ -79,7 +79,7 @@ a:visited {
     color: #00a2ff;
     background: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 .search-list {
@@ -92,7 +92,7 @@ a:visited {
 .search-list li {
     list-style: none;
     font-family: "Fjalla One", sans-serif;
-    font-size: 1.8em;
+    font-size: 1.75rem;
     height: 32px;
     padding-right: 1rem;
 }
@@ -110,7 +110,7 @@ a:visited {
 
 .search-page-logo {
     font-family: "Fjalla One", sans-serif;
-    font-size: 6em;
+    font-size: 6rem;
     font-weight: bold;
     background-image: url(../images/background.jpg);
     background-size: cover;
@@ -140,7 +140,7 @@ a:visited {
     border: none;
     border-radius: 3px;
     height: 62px;
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -151,7 +151,7 @@ a:visited {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
     height: 3rem;
     padding: 1px;
-    font-size: 18px;
+    font-size: 1.5rem;
     width: 300px;
     font-family: "Satisfy", serif;
     color: #ecf0f3;
@@ -184,12 +184,12 @@ a:visited {
 }
 
 .totalResults {
-    font-size: 32px;
+    font-size: 1.5rem;
     margin: 1rem 0;
 }
 
 .title {
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: bold;
     background-image: url(../images/background.jpg);
     background-size: cover;
@@ -201,11 +201,11 @@ a:visited {
 }
 
 .description {
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .url {
-    font-size: 16px;
+    font-size: 1rem;
     color: #3D8DCC;
     line-height: 32px;
     font-family: "Satisfy", serif;
@@ -241,11 +241,6 @@ a:visited {
 .pagination a {
     color: #BF53F6;
     font-family: "Fjalla One", sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
 }
-
-/* Media Queries */
-
-
-
