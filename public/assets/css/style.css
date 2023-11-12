@@ -222,3 +222,83 @@ a:visited {
     font-size: 2rem;
     font-weight: bold;
 }
+
+/* Media queries */
+
+@media only screen and (max-width: 900px) {
+
+    #home-page .tagline {
+        font-size: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    #home-page .logo {
+        font-size: 10rem;
+    }
+
+    #home-page .tagline {
+        font-size: 2rem;
+    }
+
+    #home-page .search-bar .search-box {
+        width: 400px;
+    }
+
+    #home-page .search-list li {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    #home-page .search-bar .search-box {
+        width: 300px;
+    }
+
+    #home-page .search-list li {
+        font-size: 1.25rem;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    
+    #home-page .logo {
+        font-size: 8rem;
+    }
+
+    #home-page .tagline {
+        font-size: 1.5rem;
+    }
+
+    #home-page .search-bar .search-box {
+        width: 280px;
+    }
+
+    #home-page .search-list li {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+
+    #home-page .logo {
+        font-size: 6rem;
+    }
+
+    #home-page .tagline {
+        font-size: 1.25rem;
+    }
+
+    #home-page .search-bar .search-box {
+        width: 200px;
+    }
+
+    #home-page .search-list li {
+        font-size: 0.75rem;
+    }
+
+}
