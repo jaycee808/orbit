@@ -127,7 +127,7 @@ a:visited {
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    height: 3rem;
+    height: 1rem;
     padding: 0.5rem;
     font-size: 1.5rem;
     width: 300px;
@@ -140,7 +140,7 @@ a:visited {
     color: #3D8DCC;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 /* Search Results */
@@ -250,6 +250,11 @@ a:visited {
     #home-page .search-list li {
         font-size: 1.5rem;
     }
+
+    #search-page .search-bar .search-box {
+        width: 200px;
+        height: 1rem;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -262,6 +267,29 @@ a:visited {
         font-size: 1.25rem;
     }
 
+    .search-page-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-bar {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+    }
+
+    #search-page .quick-searches .search-list {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #search-page .search-bar .search-box {
+        width: 300px;
+    }
+
+    .search-list li {
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -279,7 +307,15 @@ a:visited {
     }
 
     #home-page .search-list li {
-        font-size: 1rem;
+        font-size: 1.25rem;
+    }
+
+    #search-page .search-bar .search-box {
+        width: 200px;
+    }
+
+    .search-list li {
+        font-size: 1.25rem;
     }
 }
 
