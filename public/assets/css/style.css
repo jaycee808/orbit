@@ -29,7 +29,7 @@ a:visited {
 
 #home-page .logo {
     font-family: "Fjalla One", sans-serif;
-    font-size: 12rem;
+    font-size: 16rem;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -47,19 +47,8 @@ a:visited {
     color: #ecf0f3;
     font-family: "Satisfy", serif;
     font-style: italic;
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-#home-page .search-bar .search-button {
-    color: #000119;
-    background: #00a2ff;
-    border: none;
-    border-radius: 3px;
-    height: 62px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: "Fjalla One", sans-serif;
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
 }
 
 #home-page .search-bar .search-box {
@@ -67,10 +56,10 @@ a:visited {
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    height: 28px;
+    height: 2rem;
     padding: 0.5rem;
     font-size: 2rem;
-    width: 450px;
+    width: 500px;
     color: #ecf0f3;
     font-family: "Satisfy", serif;
 }
@@ -79,21 +68,21 @@ a:visited {
     color: #00a2ff;
     background: transparent;
     border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .search-list {
     display: flex;
     padding: 0;
-    margin-right: 12px;
-    margin-left: 12px;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
 }
 
 .search-list li {
     list-style: none;
     font-family: "Fjalla One", sans-serif;
-    font-size: 1.75rem;
-    height: 32px;
+    font-size: 2rem;
+    height: 2rem;
     padding-right: 1rem;
 }
 
@@ -126,31 +115,20 @@ a:visited {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
     padding: 0.25rem;
     border-bottom: 1px solid #3D8DCC;
 }
 
 /* Search Results Search Bar */
 
-#search-page .search-bar .search-button {
-    color: #000119;
-    background: #3D8DCC;
-    border: none;
-    border-radius: 3px;
-    height: 62px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 #search-page .search-bar .search-box {
     border: 2px solid #ecf0f3;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
     height: 3rem;
-    padding: 1px;
+    padding: 0.5rem;
     font-size: 1.5rem;
     width: 300px;
     font-family: "Satisfy", serif;
@@ -168,8 +146,8 @@ a:visited {
 /* Search Results */
 
 #resultsDisplay {
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
     color: #ecf0f3;
 }
 
@@ -184,12 +162,12 @@ a:visited {
 }
 
 .totalResults {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 1rem 0;
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     background-image: url(../images/background.jpg);
     background-size: cover;
@@ -201,26 +179,26 @@ a:visited {
 }
 
 .description {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .url {
     font-size: 1rem;
     color: #3D8DCC;
-    line-height: 32px;
+    line-height: 2rem;
     font-family: "Satisfy", serif;
 }
 
 .resultContainer {
-    border: 1px solid rgba(242, 242, 242, 0.311);
+    border: 1px solid rgba(242, 242, 242, 0.8);
     border-radius: 3px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .resultDetail {
-    margin-left: 12px;
-    margin-bottom: 12px;
+    margin-left: 0.75rem;
+    margin-bottom: 0.75rem;
     padding: 0.25rem;
 }
 
@@ -229,7 +207,7 @@ a:visited {
 #page-number-container {
     position: relative;
     bottom: 0;
-    margin-left: 12px;
+    margin-left: 0.75rem;
 }
 
 .pagination {

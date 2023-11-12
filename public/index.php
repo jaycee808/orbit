@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 </head>
 <body>
-    <div id="home-page">
-        <header class="logo">orbit</header>
+    <section id="home-page">
+        <div class="logo">orbit</div>
             <div class="tagline">
                 search a universe of information
             </div>
@@ -25,6 +25,6 @@
                     <li><a href="search.php?term=travel">Travel</a></li>
                 </ul>
             </div>
-    </div>
+    </section>
 </body>
 </html>
