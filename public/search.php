@@ -42,7 +42,7 @@ if(isset($_GET["term"])) {
                     <li><a href="search.php?term=politics">Politics</a></li>
                     <li><a href="search.php?term=entertainment">Entertainment</a></li>
                     <li><a href="search.php?term=sport">Sport</a></li>
-                    <li><a href="search.php?term=business">Business</a></li>
+                    <li><a href="search.php?term=travel">Travel</a></li>
                 </ul>
         </div>
 
