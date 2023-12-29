@@ -121,6 +121,27 @@ a:visited {
     border-bottom: 1px solid #3D8DCC;
 }
 
+/* Tab List */
+
+.tab-list {
+    display: flex;
+    padding: 0;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+}
+
+.tab-list li {
+    list-style: none;
+    font-family: "Fjalla One", sans-serif;
+    font-size: 2rem;
+    height: 2rem;
+    padding-right: 1rem;
+}
+
+.tab-list li a {
+    color: #BF53F6;
+}
+
 /* Search Results Search Bar */
 
 #search-page .search-bar .search-box {
@@ -337,4 +358,39 @@ a:visited {
         font-size: 0.75rem;
     }
 
+}
+
+/* Image Display Styles */
+
+.imageResults {
+    margin: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Fjalla One", sans-serif;
+}
+
+.imagesDisplay {
+    position: relative;
+}
+
+.imagesDisplay img {
+    max-width: 300px;
+    min-width: 60px;
+    padding: 0.75rem;
+}
+
+.imagesDisplay .imageDetails {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    overflow: hidden;
+    background-color: #ffffffda;
+    color: #000236;
+    visibility: hidden;
+    text-align: center;
+}
+
+.imagesDisplay:hover .imageDetails {
+    visibility: visible;
 }

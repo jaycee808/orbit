@@ -20,9 +20,9 @@ class DomDocumentParser {
         }
 
         $this->doc = new DomDocument();
-        libxml_use_internal_errors(true); // Suppress HTML parsing errors
+        libxml_use_internal_errors(true);
         $this->doc->loadHTML($html);
-        libxml_clear_errors(); // Clear any HTML parsing errors
+        libxml_clear_errors();
     }
 
     // function to get links to pages by anchor tags
@@ -39,6 +39,10 @@ class DomDocumentParser {
     public function retrieveMetaTags() {
         return $this->doc->getElementsByTagName('meta');
     }
-}
 
+    // function to get meta tags
+    public function findImages() {
+        return $this->doc->getElementsByTagName('img');
+    }
+}
 ?>

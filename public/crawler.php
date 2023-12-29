@@ -4,6 +4,7 @@ include("config.php");
 
 $crawled = array(); // array to store links that have been retrieved
 $newCrawl = array(); // array to store new links
+$storedImages = array(); // array to store images that have already been retrieved
 
 // function to retrieve URLs from searched websites
 function findLinks($url) {
@@ -22,9 +23,9 @@ function findLinks($url) {
             continue;
         }
 
-        $href = createLink($href, $url);
+        $href = createFullUrlLink($href, $url);
 
-        //if statement to recursively crawl links
+        // if statement to recursively crawl links
         if (!in_array($href, $crawled)) {
             $crawled[] = $href;
             $newCrawl[] = $href;
@@ -40,7 +41,7 @@ function findLinks($url) {
 }
 
 // function to convert found links to full URLs
-function createLink($src, $url) {
+function createFullUrlLink($src, $url) {
     $scheme = parse_url($url)["scheme"];
     $host = parse_url($url)["host"];
 
@@ -62,13 +63,12 @@ function createLink($src, $url) {
             $src = $scheme . "://" . $host . "/" . $src;
             break;
     }
-
     return $src;
 }
 
 // function to get titles of pages
 function getLinkInfo($url) {
-    global $connection;
+    global $connection, $storedImages;
 
     $parser = new DomDocumentParser($url);
     $titleList = $parser->retrieveTitles();
@@ -113,6 +113,25 @@ function getLinkInfo($url) {
     } else {
         echo "ERROR: Failed to insert $url<br>";
     }
+
+    $imageList = $parser->findImages();
+    foreach($imageList as $image) {
+        $src = $image->getAttribute('src');
+        $alt = $image->getAttribute('alt');
+        $title = $image->getAttribute('title');
+
+        if(!$title && !$alt) {
+            continue;
+    }
+
+    $src = createFullUrlLink($src, $url);
+
+    if(!in_array($src, $storedImages)) {
+        $storedImages[] = $src;
+
+        addImageToDatabase($url, $src, $title, $alt);
+    }
+}
 }
 
 // function to add found links to database
@@ -129,8 +148,8 @@ function addLinkToDatabase($url, $title, $description, $keywords) {
         $query->bindParam(":keywords", $keywords);
 
         return $query->execute();
-    } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
         return false;
     }
 
@@ -167,17 +186,35 @@ function removeLinks() {
     }
 }
 
-// $firstURL = "https://news.sky.com/uk";
-// findLinks($firstURL);
+// function to add images to database
+function addImageToDatabase($url, $src, $alt, $title) {
+    global $connection;
 
-// $secondURL = "https://www.bbc.co.uk/news";
+    try {
+        $query = $connection->prepare("INSERT INTO images (pageUrl, title, imageUrl, alt)
+                                VALUES (:pageUrl, :title,:imageUrl, :alt )");
+
+        $query->bindParam(":pageUrl", $url);
+        $query->bindParam(":title", $title);
+        $query->bindParam(":imageUrl", $src);
+        $query->bindParam(":alt", $alt);
+
+        return $query->execute();
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        return false;
+    }
+}
+
+
+// $fourteenURL = "https://www.tripadvisor.co.uk/";
+// findLinks($fourteenURL);
+
+// $secondURL = "https://www.bbc.co.uk/";
 // findLinks($secondURL);
 
-// $secondURL = "https://www.music-news.com/";
-// findLinks($secondURL);
-
-// $secondURL = "https://www.music-news.com/";
-// findLinks($secondURL);
+$secondURL = "https://www.music-news.com/";
+findLinks($secondURL);
 
 // $thirdURL = "https://inews.co.uk/";
 // findLinks($thirdURL);
@@ -200,8 +237,8 @@ function removeLinks() {
 // $thirteenURL = "https://www.residentadvisor.net/";
 // findLinks($thirteenURL);
 
-$fourteenURL = "https://www.tripadvisor.co.uk/";
-findLinks($fourteenURL);
+// $fourteenURL = "https://www.tripadvisor.co.uk/";
+// findLinks($fourteenURL);
 
 // $fourteenURL = "https://www.womenshealthmag.com/";
 // findLinks($fourteenURL);

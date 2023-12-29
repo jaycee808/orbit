@@ -1,16 +1,16 @@
 <?php
-include("./classes/searchResults.php");
 include("config.php");
+include("./classes/searchResults.php");
+include("./classes/imageResults.php");
 
-$type = isset($_GET["type"]) ? $_GET["type"] : "pages";
-$pageIndex = isset($_GET["pageIndex"]) ? $_GET["pageIndex"] : 1;
-
-if(isset($_GET["term"])) {
+if (isset($_GET["term"])) {
     $term = $_GET["term"];
 } else {
-    exit("Please enter a search value");
+    exit("Please enter a search term");
 }
 
+$type = isset($_GET["type"]) ? $_GET["type"] : "pages";
+$page = isset($_GET["page"]) ? $_GET["page"] : 1;
 ?>
 
 <!DOCTYPE html>
@@ -37,38 +37,43 @@ if(isset($_GET["term"])) {
             </div>
         </div>
 
-        <div class="quick-searches">
-                <ul class="search-list">
-                    <li><a href="search.php?term=politics">Politics</a></li>
-                    <li><a href="search.php?term=entertainment">Entertainment</a></li>
-                    <li><a href="search.php?term=sport">Sport</a></li>
-                    <li><a href="search.php?term=travel">Travel</a></li>
-                </ul>
-        </div>
-
-        <!-- tabs to filter search results -->
-        <!-- <div class="search-tabs">
+        <!-- Tabs to filter search results -->
+        <div class="search-tabs">
             <ul class="tab-list">
                 <li class="<?php echo $type == 'pages' ? 'active' : '' ?>">
-                    <a href='<?php echo "search.php?term=$term&type=pages"; ?>'>
+                    <a href='<?php echo "search.php?term=$term&type=Pages"; ?>'>
                         Pages
                     </a>
                 </li>
+
+                <li class="<?php echo $type == 'images' ? 'active' : '' ?>">
+                    <a href='<?php echo "search.php?term=$term&type=images"; ?>'>
+                        Images
+                    </a>
+                </li>
             </ul>
-        </div> -->
-    
+        </div>
 
-    <!-- section to display search results -->
-    <div id="resultsDisplay">
-        <?php
-        $search = new searchResults($connection);
-        $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
-        $numOfResultsPerPage = 20;
-        $maxPages = 10;
+        <!-- section to display search results -->
+        <div id="resultsDisplay">
+            <?php
+            $numOfResultsPerPage = 30;
+            $maxPages = 10;
+            $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-        echo $search->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
-        ?>
-    </div>
+            // Display page results
+            if ($type == "pages") {
+                $search = new SearchResults($connection);
+                echo $search->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
+            }
+
+            // Display image results
+            else if ($type == "images") {
+                $search = new ImageResults($connection);
+                echo $search->resultsImages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
+            }
+            ?>
+        </div>
     </div>
 </body>
 </html>
