@@ -206,7 +206,6 @@ function addImageToDatabase($url, $src, $alt, $title) {
     }
 }
 
-
 // $fourteenURL = "https://www.tripadvisor.co.uk/";
 // findLinks($fourteenURL);
 
@@ -238,9 +237,6 @@ findLinks($fifthURL);
 // findLinks($thirteenURL);
 
 // $fourteenURL = "https://www.tripadvisor.co.uk/";
-// findLinks($fourteenURL);
-
-// $fourteenURL = "https://www.womenshealthmag.com/";
 // findLinks($fourteenURL);
 
 // $sixteenURL = "https://www.nme.com/";

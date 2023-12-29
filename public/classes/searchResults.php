@@ -55,7 +55,7 @@ class SearchResults {
             $title = $row["title"];
             $description = $row["description"];
 
-            $url = $this->trimField($url, 30);
+            $url = $this->trimField($url, 100);
             $description = $this->trimField($description, 200);
 
             $resultsHtml .=
