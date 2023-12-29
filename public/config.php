@@ -1,5 +1,3 @@
-config.php file for old orbit
-
 <?php
 ob_start();
 
