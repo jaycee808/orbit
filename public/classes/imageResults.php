@@ -11,7 +11,8 @@ class ImageResults {
         $query = $this->connection->prepare("SELECT COUNT(*) as total 
                                     FROM images
                                     WHERE title LIKE :term 
-                                    OR alt LIKE :term");
+                                    OR alt LIKE :term
+                                    ORDER BY id DESC");
 
         $searchTerm = "%" . $term . "%";
         $query->bindParam(":term", $searchTerm);
