@@ -36,13 +36,10 @@ class ImageResults {
                                     FROM images 
                                     WHERE title LIKE :term 
                                     OR alt LIKE :term
-                                    ORDER BY id DESC
-                                    LIMIT :displayResults, :numOfResults");
+                                    ORDER BY id DESC");
     
         $searchTerm = "%" . $term . "%";
         $query->bindParam(":term", $searchTerm);
-        $query->bindParam(":displayResults", $displayResults, PDO::PARAM_INT);
-        $query->bindParam(":numOfResults", $numOfResultsPerPage, PDO::PARAM_INT);
         $query->execute();
     
         $resultsHtml = "<div class='totalResults'>Total results: $totalResults</div>";
