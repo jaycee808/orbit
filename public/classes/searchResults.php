@@ -74,7 +74,7 @@ class SearchResults {
 
         $resultsHtml .= "</div>";
 
-        $resultsHtml .= "<div class='pagination'>";
+        $resultsHtml .= "<div class='pageNumbers'>";
         for ($page = $startPage; $page <= $endPage; $page++) {
             $resultsHtml .= "<a href='search.php?term=$term&page=$page'>$page</a>";
         }

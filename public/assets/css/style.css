@@ -1,396 +1,288 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Inter:wght@300;400;700;800&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Gasoek+One&family=Paytone+One&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Global Styles */
+* {
+    font-family: "Francois One", sans-serif;
+}
 
-html,
-body {
+*, html, body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
-    background-color: #000236;
 }
 
-a {
-    text-decoration: none;
+body {
+    background-color: #010411;
+    color: #FFF;
+    line-height: 1.6;
 }
 
-a:visited {
-    color: inherit;
+form {
+    display: flex;
 }
 
-/* Home page */
+/* Header styles */
 
 #home-page {
+    /* display: grid;
+    margin: 50px auto;
+    text-align: center; */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100dvh;
-}
-
-#home-page .logo {
-    font-family: "Fjalla One", sans-serif;
-    font-size: 16rem;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-image: url(../images/background.jpg);
-    background-size: cover;
+    background-image: url("../images/orbit-bg-1.png");
     background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.logo {
+    text-transform: uppercase;
+    font-size: 10rem;
+    background: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%) text;
     -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    color: transparent;
 }
 
-#home-page .tagline {
-    color: #ecf0f3;
-    font-family: "Satisfy", serif;
-    font-style: italic;
-    font-size: 3rem;
-    margin-bottom: 0.75rem;
-}
-
-#home-page .search-bar .search-box {
-    background: transparent;
-    border: 2px solid #ecf0f3;
-    border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    height: 2rem;
-    padding: 0.5rem;
-    font-size: 2rem;
-    width: 500px;
-    color: #ecf0f3;
-    font-family: "Satisfy", serif;
-}
-
-#home-page .search-bar .search-icon {
-    color: #00a2ff;
-    background: transparent;
-    border: none;
+.tagline {
     font-size: 1.5rem;
+    color: #FFF;
+    margin-top: 5px;
+}
+
+.search-bar {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.search-box {
+    width: 70%;
+    padding: 8px;
+    font-size: 1.5rem;
+    background-color: #00000080;
+    border: 1px solid #FFF;
+    border-radius: 8px;
+}
+
+.search-icon {
+    padding: 8px;
+    border: none;
+    color: #FFC220;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 2rem;
+}
+
+/* Quick searches styles */
+
+.quick-searches-title {
+    text-align: center;
+}
+
+.quick-searches {
+    margin-top: 30px;
 }
 
 .search-list {
     display: flex;
+    justify-content: center;
+    list-style: none;
     padding: 0;
-    margin-right: 0.75rem;
-    margin-left: 0.75rem;
+    margin: 0;
 }
 
 .search-list li {
-    list-style: none;
-    font-family: "Fjalla One", sans-serif;
-    font-size: 2rem;
-    height: 2rem;
-    padding-right: 1rem;
+    margin-bottom: 10px;
+    padding: 0.75rem 2rem;
 }
 
-.search-list li a {
-    color: #BF53F6;
+.search-list a {
+    text-decoration: none;
+    color: #4285f4;
 }
 
-/* Search Page */
+/* Search results styles */
 
 #search-page {
-    display: flex;
-    flex-direction: column;
-}
-
-.search-page-logo {
-    font-family: "Fjalla One", sans-serif;
-    font-size: 6rem;
-    font-weight: bold;
-    background-image: url(../images/background.jpg);
-    background-size: cover;
-    background-position: center center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    display: grid;
 }
 
 .search-page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-    padding: 0.25rem;
-    border-bottom: 1px solid #3D8DCC;
+    display: grid;
+    background-image: url(../images/orbit-bg-1.png);
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-/* Tab List */
+.search-page-logo {
+    display: grid;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 6rem;
+    background: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%) text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.search-page-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.search-tabs {
+    
+}
 
 .tab-list {
-    display: flex;
+    list-style: none;
     padding: 0;
-    margin-right: 0.75rem;
-    margin-left: 0.75rem;
+    margin: 0;
+    text-align: center;
 }
 
 .tab-list li {
-    list-style: none;
-    font-family: "Fjalla One", sans-serif;
-    font-size: 2rem;
-    height: 2rem;
-    padding-right: 1rem;
+    display: inline-block;
+    margin-right: 20px;
 }
 
-.tab-list li a {
-    color: #BF53F6;
-}
-
-/* Search Results Search Bar */
-
-#search-page .search-bar .search-box {
-    border: 2px solid #ecf0f3;
-    border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    height: 1rem;
-    padding: 0.5rem;
+.tab-list a {
+    text-decoration: none;
+    color: #FFF;
     font-size: 1.5rem;
-    width: 300px;
-    font-family: "Satisfy", serif;
-    color: #ecf0f3;
-    background: transparent;
 }
 
-#search-page .search-bar .search-icon {
-    color: #3D8DCC;
-    background: transparent;
-    border: none;
-    font-size: 1rem;
+.tab-list a.active {
+    color: #4285f4;
 }
 
-/* Search Results */
-
-#resultsDisplay {
-    margin-left: 0.75rem;
-    margin-right: 0.75rem;
-    color: #ecf0f3;
-}
-
-.title,
-.result,
-.totalResults {
-    font-family: "Fjalla One", sans-serif;
-}
-
-.description {
-    font-family: "Inter", sans-serif;
+.resultsDisplay {
+    margin-top: 20px;
 }
 
 .totalResults {
-    font-size: 1rem;
-    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #FFF;
+    margin-bottom: 10px;
+}
+
+.searchResults {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.resultContainer {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.resultDetail {
+    width: 100%;
+    padding: 10px;
+    background-color: #010411;
+    color: #FFF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 .title {
-    font-size: 3rem;
-    font-weight: bold;
-    background-image: url(../images/background.jpg);
-    background-size: cover;
-    background-position: center center;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
 }
 
-.description {
-    font-size: 2rem;
+.url, .description, .imageDetails {
+    font-size: 1.5rem;
+    color: #FFF;
 }
 
-.url {
-    font-size: 1rem;
-    color: #3D8DCC;
-    line-height: 2rem;
-    font-family: "Satisfy", serif;
+.pageNumbers {
+    margin-bottom: 4rem;
 }
 
-.resultContainer {
-    border: 1px solid rgba(242, 242, 242, 0.8);
-    border-radius: 3px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.resultDetail {
-    margin-left: 0.75rem;
-    margin-bottom: 0.75rem;
-    padding: 0.25rem;
-}
-
-/* Page Numbers */
-
-#page-number-container {
-    position: relative;
-    bottom: 0;
-    margin-left: 0.75rem;
-}
-
-.pagination {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1rem;
-}
-
-.pagination a {
-    color: #BF53F6;
-    font-family: "Fjalla One", sans-serif;
-    font-size: 2rem;
+.pageNumbers a {
+    text-decoration: none;
+    color: #00a2ff;
+    margin-right: 10px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-/* Media queries */
-
-@media only screen and (max-width: 900px) {
-
-    #home-page .tagline {
-        font-size: 2rem;
-    }
-
-}
-
-@media only screen and (max-width: 600px) {
-
-    #home-page .logo {
-        font-size: 10rem;
-    }
-
-    #home-page .tagline {
-        font-size: 2rem;
-    }
-
-    #home-page .search-bar .search-box {
-        width: 400px;
-    }
-
-    #home-page .search-list li {
-        font-size: 1.5rem;
-    }
-
-    #search-page .search-bar .search-box {
-        width: 200px;
-        height: 1rem;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-
-    #home-page .search-bar .search-box {
-        width: 300px;
-    }
-
-    #home-page .search-list li {
-        font-size: 1.25rem;
-    }
-
-    .search-page-logo {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .search-bar {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1rem;
-    }
-
-    #search-page .quick-searches .search-list {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    #search-page .search-bar .search-box {
-        width: 300px;
-    }
-
-    .search-list li {
-        font-size: 1.5rem;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    
-    #home-page .logo {
-        font-size: 8rem;
-    }
-
-    #home-page .tagline {
-        font-size: 1.5rem;
-    }
-
-    #home-page .search-bar .search-box {
-        width: 280px;
-    }
-
-    #home-page .search-list li {
-        font-size: 1.25rem;
-    }
-
-    #search-page .search-bar .search-box {
-        width: 200px;
-    }
-
-    .search-list li {
-        font-size: 1.25rem;
-    }
-}
-
-@media only screen and (max-width: 340px) {
-
-    #home-page .logo {
-        font-size: 6rem;
-    }
-
-    #home-page .tagline {
-        font-size: 1.25rem;
-    }
-
-    #home-page .search-bar .search-box {
-        width: 200px;
-    }
-
-    #home-page .search-list li {
-        font-size: 0.75rem;
-    }
-
-}
-
-/* Image Display Styles */
+/* Image results styles */
 
 .imageResults {
-    margin: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    font-family: "Fjalla One", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
 }
 
 .imagesDisplay {
     position: relative;
+    overflow: hidden;
+}
+
+.imagesDisplay a {
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 .imagesDisplay img {
-    max-width: 300px;
-    min-width: 60px;
-    padding: 0.75rem;
-}
-
-.imagesDisplay .imageDetails {
-    position: absolute;
-    bottom: 0px;
     width: 100%;
-    left: 0px;
-    overflow: hidden;
-    background-color: #FFF;
-    color: #000236;
-    visibility: hidden;
-    text-align: center;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.imagesDisplay:hover .imageDetails {
-    visibility: visible;
+.imagesDisplay:hover img {
+    transform: scale(1.1);
+}
+
+.imageDetails {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    color: #000;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Footer Styles */
+
+.footer {
+    position: fixed;
+    text-align: center;
+    background-color: #00000080;
+    color: #FFF;
+    padding: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.footer a {
+    color: #429EB2;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
 }
