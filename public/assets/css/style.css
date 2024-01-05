@@ -208,6 +208,8 @@ form {
 
 .url {
     font-size: 0.75rem;
+    word-wrap: break-word;
+    color: #00a2ff;
 }
 
 .pageNumbers {
