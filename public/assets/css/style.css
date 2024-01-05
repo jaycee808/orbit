@@ -206,6 +206,10 @@ form {
     color: #FFF;
 }
 
+.url {
+    font-size: 0.75rem;
+}
+
 .pageNumbers {
     margin-bottom: 4rem;
 }

@@ -221,8 +221,8 @@ function addImageToDatabase($url, $src, $alt, $title) {
 // $fourthURL = "https://www.independent.co.uk/";
 // findLinks($fourthURL);
 
-// $fifthURL = "https://www.billboard.com/";
-// findLinks($fifthURL);
+$fifthURL = "https://www.billboard.com/";
+findLinks($fifthURL);
 
 // $sevenURL = "https://www.menshealth.com/";
 // findLinks($sevenURL);
@@ -245,7 +245,7 @@ function addImageToDatabase($url, $src, $alt, $title) {
 // $seventeenURL = "https://www.nypost.com/";
 // findLinks($seventeenURL);
 
-$eighteenURL = "https://www.huffingtonpost.co.uk/";
-findLinks($eighteenURL);
+// $eighteenURL = "https://www.huffingtonpost.co.uk/";
+// findLinks($eighteenURL);
 
 ?>
