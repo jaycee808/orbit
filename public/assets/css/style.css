@@ -14,12 +14,6 @@ body, h1, h2, h3, p, ul {
     padding: 0;
 }
 
-body {
-    /* background-color: #010411;
-    color: #FFF; */
-    line-height: 1.6;
-}
-
 form {
     display: flex;
 }
@@ -77,7 +71,7 @@ a {
 .search-icon {
     padding: 8px;
     border: none;
-    color: #FFC220;
+    color: #8DB1DD;
     cursor: pointer;
     background-color: transparent;
     font-size: 2rem;
@@ -108,7 +102,7 @@ a {
 
 .search-list a {
     text-decoration: none;
-    color: #4285f4;
+    color: #8DB1DD;
 }
 
 /* Search results styles */
@@ -119,32 +113,41 @@ a {
 }
 
 .search-page-header {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     background-image: url(../images/orbit-bg-1.png);
-    background-position: center center;
+    background-position: left center;
     background-repeat: repeat;
     overflow: visible;
+    padding: 0;
 }
 
 .search-page-logo a {
     display: grid;
     text-align: center;
     text-transform: uppercase;
-    font-size: 10rem;
+    font-size: 6rem;
     color: #0104118D;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #EDF1F4;
 }
 
-.search-tabs {
-    
+#search-page .search-bar {
+    width: 400px;
+    height: 2rem;
+    align-self: center;
+}
+
+#search-page .search-bar .search-icon {
+    font-size: 1rem;
+    align-self: center;
 }
 
 .tab-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
 .tab-list li {
@@ -159,7 +162,7 @@ a {
 }
 
 .tab-list a.active {
-    color: #4285f4;
+    color: #8DB1DD;
 }
 
 .resultsDisplay {
@@ -194,7 +197,7 @@ a {
 .title {
     font-size: 2rem;
     margin-bottom: 5px;
-    background: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    background: linear-gradient(to right, #5EC2B7, #8DB1DD, #F5396E, #F9AC5b);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -209,7 +212,7 @@ a {
 .url {
     font-size: 0.75rem;
     word-wrap: break-word;
-    color: #00a2ff;
+    color: #8DB1DD;
 }
 
 .pageNumbers {
@@ -218,7 +221,7 @@ a {
 
 .pageNumbers a {
     text-decoration: none;
-    color: #00a2ff;
+    color: #8DB1DD;
     margin-right: 10px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -260,10 +263,10 @@ a {
     left: 0;
     width: 100%;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #8DB1DD;
     box-sizing: border-box;
     font-size: 1.5rem;
-    color: #000;
+    color: #010411;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -275,8 +278,8 @@ a {
 .footer {
     position: fixed;
     text-align: center;
-    background-color: #00000080;
-    color: #FFF;
+    background-color: #0104118D;
+    color: #EDF1F4;
     padding: 0;
     bottom: 0;
     width: 100%;
@@ -284,7 +287,7 @@ a {
 }
 
 .footer a {
-    color: #429EB2;
+    color: #8DB1DD;
     text-decoration: none;
     margin: 0 10px;
 }

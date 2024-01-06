@@ -33,8 +33,8 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                     <input class="search-box" type="text" name="term" placeholder="<?php echo $term ?>">
                     <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-
-                        <!-- Tabs to filter search results -->
+        </div>
+        <!-- Tabs to filter search results -->
         <div class="search-tabs">
             <ul class="tab-list">
                 <li class="<?php echo $type == 'pages' ? 'active' : '' ?>">
@@ -50,9 +50,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                 </li>
             </ul>
         </div>
-        </div>
-
-
+        
 
         <!-- section to display search results -->
         <div id="resultsDisplay">
