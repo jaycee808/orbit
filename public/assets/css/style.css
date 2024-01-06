@@ -317,7 +317,7 @@ a {
 @media only screen and (max-width: 600px) {
 
     .resultContainer {
-        width: 90%;
+        width: 85%;
         margin: 0.25rem;
     }
 }
