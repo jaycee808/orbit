@@ -14,6 +14,10 @@ body, h1, h2, h3, p, ul {
     padding: 0;
 }
 
+body {
+    background-color: #010411;
+}
+
 form {
     display: flex;
 }
@@ -109,7 +113,6 @@ a {
 
 #search-page {
     display: grid;
-    background-color: #010411;
 }
 
 #search-page .search-page-header {
@@ -118,7 +121,6 @@ a {
     background-image: url(../images/orbit-bg-1.png);
     background-position: left center;
     background-repeat: repeat;
-    overflow: visible;
     padding-bottom: 1rem;
 }
 
@@ -178,10 +180,6 @@ a {
 
 .tab-list a.active {
     color: #8DB1DD;
-}
-
-.resultsDisplay {
-    margin-top: 20px;
 }
 
 .totalResults {
@@ -318,5 +316,8 @@ a {
 
 @media only screen and (max-width: 600px) {
 
-
+    .resultContainer {
+        width: 90%;
+        margin: 0.25rem;
+    }
 }
