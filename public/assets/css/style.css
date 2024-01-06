@@ -15,8 +15,8 @@ body, h1, h2, h3, p, ul {
 }
 
 body {
-    background-color: #010411;
-    color: #FFF;
+    /* background-color: #010411;
+    color: #FFF; */
     line-height: 1.6;
 }
 
@@ -24,35 +24,37 @@ form {
     display: flex;
 }
 
+
+a {
+    text-decoration: none;
+}
+
 /* Header styles */
 
 #home-page {
-    /* display: grid;
-    margin: 50px auto;
-    text-align: center; */
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100dvh;
+    background-color: #010411;
     background-image: url("../images/orbit-bg-1.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-.logo {
+#home-page .logo {
     text-transform: uppercase;
     font-size: 10rem;
-    background: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%) text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: #0104118D;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #EDF1F4;
 }
 
 .tagline {
     font-size: 1.5rem;
-    color: #FFF;
+    color: #EDF1F4;
     margin-top: 5px;
 }
 
@@ -66,9 +68,10 @@ form {
     width: 70%;
     padding: 8px;
     font-size: 1.5rem;
-    background-color: #00000080;
-    border: 1px solid #FFF;
+    background-color: #0104118D;
+    border: 1px solid #EDF1F4;
     border-radius: 8px;
+    color: #EDF1F4;
 }
 
 .search-icon {
@@ -112,28 +115,25 @@ form {
 
 #search-page {
     display: grid;
+    background-color: #010411;
 }
 
 .search-page-header {
     display: grid;
     background-image: url(../images/orbit-bg-1.png);
     background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.search-page-logo {
-    display: grid;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 6rem;
-    background: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%) text;
-    -webkit-background-clip: text;
-    color: transparent;
+    background-repeat: repeat;
+    overflow: visible;
 }
 
 .search-page-logo a {
-    text-decoration: none;
-    color: inherit;
+    display: grid;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10rem;
+    color: #0104118D;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #EDF1F4;
 }
 
 .search-tabs {
@@ -291,4 +291,10 @@ form {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+/* Media Queries for Smaller Devices */
+
+@media only screen and (max-width: 600px) {
+
 }
