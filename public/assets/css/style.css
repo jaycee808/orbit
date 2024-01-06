@@ -52,13 +52,13 @@ a {
     margin-top: 5px;
 }
 
-.search-bar {
+#home-page .search-bar {
     margin-top: 20px;
     width: 100%;
     justify-content: center;
 }
 
-.search-box {
+#home-page .search-box {
     width: 70%;
     padding: 8px;
     font-size: 1.5rem;
@@ -68,7 +68,7 @@ a {
     color: #EDF1F4;
 }
 
-.search-icon {
+#home-page .search-icon {
     padding: 8px;
     border: none;
     color: #8DB1DD;
@@ -112,7 +112,7 @@ a {
     background-color: #010411;
 }
 
-.search-page-header {
+#search-page .search-page-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -120,28 +120,44 @@ a {
     background-position: left center;
     background-repeat: repeat;
     overflow: visible;
-    padding: 0;
+    padding-bottom: 1rem;
 }
 
-.search-page-logo a {
-    display: grid;
-    text-align: center;
+#search-page .search-page-logo a {
     text-transform: uppercase;
     font-size: 6rem;
     color: #0104118D;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #EDF1F4;
+    margin-left: 1.75rem;
 }
 
 #search-page .search-bar {
-    width: 400px;
     height: 2rem;
     align-self: center;
+    margin-top: 1.75rem;
+    margin-right: 1.75rem;
+    justify-content: center;
 }
 
 #search-page .search-bar .search-icon {
-    font-size: 1rem;
     align-self: center;
+    padding: 8px;
+    border: none;
+    color: #8DB1DD;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+#search-page .search-box {
+    width: 100%;
+    padding: 8px;
+    font-size: 1.5rem;
+    background-color: #0104118D;
+    border: 1px solid #EDF1F4;
+    border-radius: 8px;
+    color: #EDF1F4;
 }
 
 .tab-list {
