@@ -206,23 +206,23 @@ function addImageToDatabase($url, $src, $alt, $title) {
     }
 }
 
-// $fourteenURL = "https://www.tripadvisor.co.uk/";
+// $fourteenURL = "https://www.imdb.com/";
 // findLinks($fourteenURL);
 
-// $secondURL = "https://www.bbc.co.uk/";
+$secondURL = "https://www.bbc.co.uk/";
+findLinks($secondURL);
+
+// $secondURL = "https://www.goodreads.com/";
 // findLinks($secondURL);
 
-// $secondURL = "https://www.music-news.com/";
-// findLinks($secondURL);
-
-// $thirdURL = "https://inews.co.uk/";
+// $thirdURL = "https://www.radiotimes.com/tv/";
 // findLinks($thirdURL);
 
 // $fourthURL = "https://www.independent.co.uk/";
 // findLinks($fourthURL);
 
-$fifthURL = "https://www.billboard.com/";
-findLinks($fifthURL);
+// $fifthURL = "https://www.billboard.com/";
+// findLinks($fifthURL);
 
 // $sevenURL = "https://www.menshealth.com/";
 // findLinks($sevenURL);
@@ -242,7 +242,7 @@ findLinks($fifthURL);
 // $sixteenURL = "https://www.nme.com/";
 // findLinks($sixteenURL);
 
-// $seventeenURL = "https://www.nypost.com/";
+// $seventeenURL = "https://www.lonelyplanet.com/";
 // findLinks($seventeenURL);
 
 // $eighteenURL = "https://www.huffingtonpost.co.uk/";
