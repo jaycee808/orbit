@@ -164,7 +164,7 @@ a {
 .tab-list {
     list-style: none;
     margin-top: -0.75rem;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     border: 1px solid #EDF1F4;
     border-radius: 6px;
     background-color: #010411;
