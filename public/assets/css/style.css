@@ -240,7 +240,9 @@ a {
 }
 
 .pageNumbers {
-    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 0.5rem 0.5rem 4rem 0.5rem;
 }
 
 .pageNumbers a {
