@@ -206,11 +206,11 @@ function addImageToDatabase($url, $src, $alt, $title) {
     }
 }
 
-$fourteenURL = "https://www.imdb.com/";
-findLinks($fourteenURL);
+// $fourteenURL = "https://www.imdb.com/";
+// findLinks($fourteenURL);
 
-// $secondURL = "https://www.bbc.co.uk/";
-// findLinks($secondURL);
+$secondURL = "https://www.bbc.co.uk/";
+findLinks($secondURL);
 
 // $secondURL = "https://www.goodreads.com/";
 // findLinks($secondURL);

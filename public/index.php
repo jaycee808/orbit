@@ -14,19 +14,17 @@
                 <input class="search-box" type="text" name="term" placeholder="Let's explore">
                 <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
-            <!-- <div class="tagline">search a universe of information</div> -->
-    </section>
-
-    <!-- <section class="quick-searches">
-            <div class="quick-searches-title">Quick Search</div>
-            <ul class="search-list">
-                <li><a href="search.php?term=politics">Politics</a></li>
-                <li><a href="search.php?term=entertainment">Entertainment</a></li>
-                <li><a href="search.php?term=sport">Sport</a></li>
-                <li><a href="search.php?term=travel">Travel</a></li>
-            </ul>
+        <div class="quick-search">
+            <div class="quick-search-title">Quick Search</div>
+                <ul class="search-list">
+                    <li><a href="search.php?term=politics">Politics</a></li>
+                    <li><a href="search.php?term=entertainment">Entertainment</a></li>
+                    <li><a href="search.php?term=sport">Sport</a></li>
+                    <li><a href="search.php?term=travel">Travel</a></li>
+                </ul>
+            </div>
         </div>
-    </section> -->
+    </section>
     
     <footer class="footer">
         <div class="footer-title"></div>&copy; 2024 ORBIT 

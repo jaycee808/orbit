@@ -84,25 +84,39 @@ a {
 
 /* Quick searches styles */
 
-.quick-searches-title {
-    text-align: center;
+.quick-search {
+    margin-top: 30px;
+    width: 100%;
+    padding: 8px;
+    font-size: 1.5rem;
 }
 
-.quick-searches {
-    margin-top: 30px;
+.quick-search-title {
+    margin-top: -0.75rem;
+    margin-left: 5rem;
+    border: 1px solid #EDF1F4;
+    border-radius: 6px;
+    background-color: #010411;
+    color: #F5396E;
+    width: fit-content;
+    padding: 0.5rem;
+    z-index: 5;
+    position: relative;
 }
 
 .search-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    border-radius: 6px;
+    background-color: #0104118D;
+    color: #EDF1F4;
+    margin-top: -0.5rem;
+    z-index: 1;
 }
 
 .search-list li {
-    margin-bottom: 10px;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 3rem;
 }
 
 .search-list a {
