@@ -76,7 +76,7 @@ a {
 #home-page .search-icon {
     padding: 8px;
     border: none;
-    color: #F5396E;
+    color: #8DB1DD;
     cursor: pointer;
     background-color: transparent;
     font-size: 2rem;
@@ -85,15 +85,14 @@ a {
 /* Quick searches styles */
 
 .quick-search {
-    margin-top: 30px;
-    width: 100%;
-    padding: 8px;
+    margin: 1rem;
+    padding: 0.75rem;
     font-size: 1.5rem;
 }
 
 .quick-search-title {
     margin-top: -0.75rem;
-    margin-left: 5rem;
+    margin-left: -2rem;
     border: 1px solid #EDF1F4;
     border-radius: 6px;
     background-color: #010411;
@@ -105,19 +104,27 @@ a {
 }
 
 .search-list {
-    display: flex;
-    justify-content: space-around;
     list-style: none;
     border-radius: 6px;
     background-color: #0104118D;
     color: #EDF1F4;
     margin-top: -0.5rem;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
 }
 
 .search-list li {
     padding: 0.75rem 3rem;
+    margin: 0.5rem 0;
 }
+
 
 .search-list a {
     text-decoration: none;
@@ -159,7 +166,7 @@ a {
     align-self: center;
     padding: 8px;
     border: none;
-    color: #F5396E;
+    color: #8DB1DD;
     cursor: pointer;
     background-color: transparent;
     font-size: 1rem;

@@ -14,16 +14,21 @@
                 <input class="search-box" type="text" name="term" placeholder="Let's explore">
                 <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
+            
         <div class="quick-search">
             <div class="quick-search-title">Quick Search</div>
-                <ul class="search-list">
-                    <li><a href="search.php?term=politics">Politics</a></li>
+            <ul class="search-list">
+                <div class="column">
                     <li><a href="search.php?term=entertainment">Entertainment</a></li>
                     <li><a href="search.php?term=sport">Sport</a></li>
+                </div>
+                <div class="column">
                     <li><a href="search.php?term=travel">Travel</a></li>
-                </ul>
-            </div>
+                    <li><a href="search.php?term=politics">Politics</a></li>
+                </div>
+            </ul>
         </div>
+
     </section>
     
     <footer class="footer">
