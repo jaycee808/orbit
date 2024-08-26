@@ -31,11 +31,10 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                     orbit
                 </a>
             </div>
-                <form class="search-bar" action="search.php" method="GET">
-                    <input class="search-box" type="text" name="term" placeholder="<?php echo $term ?>">
-                    <button class="search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <form class="search-page-search-bar" action="search.php" method="GET">
+                    <input class="search-page-search-box" type="text" name="term" placeholder="<?php echo $term ?>">
+                    <button class="search-page-search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-        </div>
         <!-- Tabs to filter search results -->
         <div class="search-tabs">
             <ul class="tab-list">
@@ -52,13 +51,13 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                 </li>
             </ul>
         </div>
-        
+        </div>
 
         <!-- section to display search results -->
         <div id="resultsDisplay">
             <?php
             $numOfResultsPerPage = 30;
-            $maxPages = 10;
+            $maxPages = 8;
             $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
             // Display page results
@@ -78,10 +77,6 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
     <footer class="footer">
         <div class="footer-title"></div>&copy; 2024 ORBIT 
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a> 
-                <a href="#">Terms of Service</a>
-            </div>
     </footer>
 </body>
 </html>

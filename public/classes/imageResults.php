@@ -65,7 +65,8 @@ class ImageResults {
                                     <img src='$imageUrl'>
                                     <span class='imageDetails'>$displayText</span>
                                 </a>
-                            </div>";
+                            </div>
+                            ";
         }
     
         $resultsHtml .= "</div>";

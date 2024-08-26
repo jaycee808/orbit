@@ -215,14 +215,14 @@ function addImageToDatabase($url, $src, $alt, $title) {
 // $secondURL = "https://www.goodreads.com/";
 // findLinks($secondURL);
 
-$thirdURL = "https://www.radiotimes.com/tv/";
-findLinks($thirdURL);
+// $thirdURL = "https://www.radiotimes.com/tv/";
+// findLinks($thirdURL);
 
 // $fourthURL = "https://www.independent.co.uk/";
 // findLinks($fourthURL);
 
-// $fifthURL = "https://www.billboard.com/";
-// findLinks($fifthURL);
+$fifthURL = "https://www.billboard.com/";
+findLinks($fifthURL);
 
 // $sevenURL = "https://www.menshealth.com/";
 // findLinks($sevenURL);
