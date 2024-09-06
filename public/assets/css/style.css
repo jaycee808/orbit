@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Giga:wght@100..900&family=Lexend+Mega:wght@100..900&family=Lexend+Peta:wght@100..900&family=Lexend+Tera:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap');
 
+/* Color Palette */
+
+:root {
+    --black: #131315;
+    --yellow: #EDC86A;
+    --cream: #F5F4C6;
+    --gray: #5E6E7A;
+    --white: #FFFFF2;
+}
+
 /* Global Styles */
 
 *, html, body {
@@ -38,7 +48,6 @@ a {
 .home-page-header {
     width: 30%;
     padding: 2rem;
-    color: #FFFFFF;
     position: fixed;
     top: 0;
     left: 0;
@@ -52,7 +61,7 @@ a {
 .home-page-logo {
     font-family: 'Lexend Peta', 'Helvetica Neue', sans-serif;
     font-size: 5rem;
-    color: #FFFFFF;
+    color: var(--white);
     text-transform: uppercase;
 }
 
@@ -61,7 +70,7 @@ a {
     align-items: center;
     border-radius: 1rem;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--white);
     margin-bottom: 2rem;
 }
 
@@ -76,7 +85,7 @@ a {
 
 .home-page-search-icon {
     padding: 1rem;
-    background-color: #FFFFFF;
+    background-color: var(--yellow);
     border: none;
     cursor: pointer;
     border-radius: 0 1rem 1rem 0;
@@ -84,7 +93,7 @@ a {
 
 .home-page-search-icon i {
     font-size: 1.5rem;
-    color: #000000;
+    color: var(--black);
 }
 
 /* Quick Search Section */
@@ -101,7 +110,7 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.3); */
     border-radius: 1rem;
     padding: 1rem;
-    color: #FFF;
+    color: var(--cream);
 }
 
 .quick-search-title {
@@ -109,8 +118,8 @@ a {
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 1rem;
-    border-bottom: 1px solid #FFF;
-    color: #FFF;
+    border-bottom: 1px solid var(--cream);
+    color: var(--white);
 }
 
 .search-list {
@@ -121,11 +130,11 @@ a {
 
 .search-list li a {
     font-size: 1.25rem;
-    color: #FFF;
+    color: var(--white);
 }
 
 .search-list li a:hover {
-    color: yellow;
+    color: var(--yellow);
 }
 
 /* Search Page Layout */
@@ -141,7 +150,6 @@ a {
 .search-page-header {
     width: 30%;
     padding: 2rem;
-    color: #FFFFFF;
     position: fixed;
     top: 0;
     left: 0;
@@ -155,7 +163,7 @@ a {
 .search-page-logo a {
     font-family: 'Lexend Peta', 'Helvetica Neue', sans-serif;
     font-size: 5rem;
-    color: #FFFFFF;
+    color: var(--white);
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
@@ -165,7 +173,7 @@ a {
     align-items: center;
     border-radius: 1rem;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: var(--white);
     margin-bottom: 2rem;
 }
 
@@ -180,7 +188,7 @@ a {
 
 .search-page-search-icon {
     padding: 1rem;
-    background-color: #FFFFFF;
+    background-color: var(--yellow);
     border: none;
     cursor: pointer;
     border-radius: 0 1rem 1rem 0;
@@ -188,7 +196,7 @@ a {
 
 .search-page-search-icon i {
     font-size: 1.5rem;
-    color: #000000;
+    color: var(--black);
 }
 
 /* Tabs for filtering search results */
@@ -242,8 +250,12 @@ a {
 .totalResults {
     font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: #FFFFFF;
     font-weight: bold;
+    color: var(--cream);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    transition: background-color 0.3s;
 }
 
 /* Search Results Container */
@@ -271,14 +283,14 @@ a {
 
 .title a.result {
     font-size: 1.5rem;
-    color: #000;
+    color: var(--black);
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .title a.result:hover {
-    color: blue;
+    color: var(--gray);
 }
 
 /* URL */
@@ -286,7 +298,7 @@ a {
 .url {
     display: block;
     font-size: 1rem;
-    color: #000;
+    color: var(--gray);
     margin-top: 0.5rem;
 }
 
@@ -294,7 +306,7 @@ a {
 
 .description {
     font-size: 1rem;
-    color: #000;
+    color: var(--black);
     margin-top: 0.5rem;
 }
 
@@ -310,8 +322,8 @@ a {
 .pageNumbers a {
     margin: 0 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: #FFFFFF;
-    color: #000;
+    background-color: var(--cream);
+    color: var(--gray);
     border-radius: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, box-shadow 0.3s;
@@ -319,7 +331,8 @@ a {
 }
 
 .pageNumbers a:hover {
-    background-color: #FFD700;
+    background-color: var(--yellow);
+    color: var(--black);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -375,9 +388,10 @@ a {
     right: 0;
     padding: 0.75rem;
     background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
+    color: var(--white);
     font-size: 1rem;
-    text-align: center;
+    text-align: left;
+    text-overflow: ellipsis;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     transition: background-color 0.3s;
@@ -391,7 +405,7 @@ a {
 
 .footer {
     padding: 2rem;
-    color: #FFFFFF;
+    color: var(--cream);
     font-size: 1rem;
     position: fixed;
     bottom: 0;
@@ -409,7 +423,19 @@ a {
 /* Media Queries */
 
 @media only screen and (max-width: 768px) {
-    .home-page-header, .search-page-header {
+    
+    body {
+        display: grid;
+    }
+
+    .home-page-header {
+        width: 100%;
+        padding: 1rem;
+        position: relative;
+        height: 40dvh;
+    }
+
+    .search-page-header {
         width: 100%;
         padding: 1rem;
         position: relative;
@@ -483,10 +509,16 @@ a {
 }
 
 @media only screen and (max-width: 480px) {
-    .home-page-header, .search-page-header {
+    
+    .home-page-header {
         width: 100%;
         padding: 1rem;
-        position: relative;
+        height: 35dvh;
+    }
+
+    .search-page-header {
+        width: 100%;
+        padding: 1rem;
         height: 35dvh;
     }
 
@@ -499,7 +531,6 @@ a {
 
     .totalResults {
         font-size: 1rem;
-        margin-left: 1rem;
     }
 
     .url {
