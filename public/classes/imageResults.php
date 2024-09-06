@@ -59,7 +59,7 @@ class ImageResults {
             } else {
                 $displayText = $imageUrl;
             }
-    
+
             // Limit the display text to 25 characters
             if (mb_strlen($displayText) > 25) {
                 $displayText = mb_substr($displayText, 0, 25) . '...';
