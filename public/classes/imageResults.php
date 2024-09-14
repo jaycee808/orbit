@@ -60,9 +60,9 @@ class ImageResults {
                 $displayText = $imageUrl;
             }
 
-            if (mb_strlen($displayText) > 25) {
-                $displayText = mb_substr($displayText, 0, 25) . '...';
-            }
+            // if (mb_strlen($displayText) > 25) {
+            //     $displayText = mb_substr($displayText, 0, 25) . '...';
+            // }
     
             $resultsHtml .= "<div class='imagesDisplay'>
                                     <a href='$imageUrl'>
