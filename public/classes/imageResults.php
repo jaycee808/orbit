@@ -52,17 +52,13 @@ class ImageResults {
             $title = $row["title"];
             $alt = $row["alt"];
     
-            if($title) {
-                $displayText = $title;
-            } else if($alt) {
-                $displayText = $alt;
+            if(strlen($title) > 25) {
+                $displayText = substr($title, 0, 25) . '...';
+            } else if(strlen($alt) > 25) {
+                $displayText = substr($alt, 0, 25) . '...';
             } else {
-                $displayText = $imageUrl;
+                $displayText = substr($imageUrl, 0, 25) . '...';
             }
-
-            // if (mb_strlen($displayText) > 25) {
-            //     $displayText = mb_substr($displayText, 0, 25) . '...';
-            // }
     
             $resultsHtml .= "<div class='imagesDisplay'>
                                     <a href='$imageUrl'>
