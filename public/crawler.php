@@ -215,10 +215,10 @@ function addImageToDatabase($url, $src, $alt, $title) {
 // $secondURL = "https://www.goodreads.com/";
 // findLinks($secondURL);
 
-// $thirdURL = "https://www.radiotimes.com/tv/";
-// findLinks($thirdURL);
+$thirdURL = "https://www.radiotimes.com/tv/";
+findLinks($thirdURL);
 
-// $fourthURL = "https://www.independent.co.uk/";
+// $fourthURL = "https://www.msn.com/en-gb";
 // findLinks($fourthURL);
 
 // $fifthURL = "https://www.billboard.com/";
@@ -230,19 +230,13 @@ function addImageToDatabase($url, $src, $alt, $title) {
 // $nineURL = "https://pitchfork.com/";
 // findLinks($nineURL);
 
-$tenURL = "https://variety.com/";
-findLinks($tenURL);
-
-// $thirteenURL = "https://www.residentadvisor.net/";
-// findLinks($thirteenURL);
-
-// $fourteenURL = "https://www.tripadvisor.co.uk/";
-// findLinks($fourteenURL);
+// $tenURL = "https://variety.com/";
+// findLinks($tenURL);
 
 // $sixteenURL = "https://www.nme.com/";
 // findLinks($sixteenURL);
 
-// $seventeenURL = "https://www.theguardian.com/uk";
+// $seventeenURL = "https://www.ted.com/";
 // findLinks($seventeenURL);
 
 // $eighteenURL = "https://www.huffingtonpost.co.uk/";

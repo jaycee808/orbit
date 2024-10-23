@@ -20,10 +20,9 @@
         <div class="quick-search">
             <div class="quick-search-title">Quick Search</div>
                 <ul class="search-list">
-                    <li><a href="search.php?term=entertainment">Entertainment</a></li>
-                    <li><a href="search.php?term=sport">Sport</a></li>
-                    <li><a href="search.php?term=travel">Travel</a></li>
-                    <li><a href="search.php?term=politics">Politics</a></li>
+                    <li><a href="search.php?term=music">Music</a></li>
+                    <li><a href="search.php?term=film">Film</a></li>
+                    <li><a href="search.php?term=travel">Television</a></li>
                 </ul>
         </div>
 
