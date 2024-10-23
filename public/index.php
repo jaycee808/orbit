@@ -22,7 +22,7 @@
                 <ul class="search-list">
                     <li><a href="search.php?term=music">Music</a></li>
                     <li><a href="search.php?term=film">Film</a></li>
-                    <li><a href="search.php?term=travel">Television</a></li>
+                    <li><a href="search.php?term=Television">Television</a></li>
                 </ul>
         </div>
 
