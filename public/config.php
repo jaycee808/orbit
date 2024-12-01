@@ -1,10 +1,11 @@
 <?php
 ob_start();
 
-$db_host = "eu-cluster-west-01.k8s.cleardb.net";
-$db_user = "b0a8b12ba113bc";
-$db_pass = "802fce8a";
-$db_name = "heroku_9f87f24fd978d58";
+$db_host = 
+"sabaik6fx8he7pua.chr7pe7iynqr.eu-west-1.rds.amazonaws.com";
+$db_user = "snk3kx62k2hq2nlk";
+$db_pass = "i74awzbyulz06dwj";
+$db_name = "mxdppjy54d224qzv";
 
 try {
     $connection = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
