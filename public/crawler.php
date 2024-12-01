@@ -212,8 +212,8 @@ function addImageToDatabase($url, $src, $alt, $title) {
 // $secondURL = "https://www.bbc.co.uk/";
 // findLinks($secondURL);
 
-// $thirdURL = "https://www.radiotimes.com/tv/";
-// findLinks($thirdURL);
+$thirdURL = "https://www.bbc.co.uk/news/topics/c40rjmqdwr7t";
+findLinks($thirdURL);
 
 // $fourthURL = "https://www.sportengland.org/";
 // findLinks($fourthURL);
