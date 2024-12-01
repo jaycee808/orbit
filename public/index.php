@@ -23,6 +23,7 @@
                     <li><a href="search.php?term=music">Music</a></li>
                     <li><a href="search.php?term=film">Film</a></li>
                     <li><a href="search.php?term=Television">Television</a></li>
+                    <li><a href="search.php?term=Sport">Sport</a></li>
                 </ul>
         </div>
 
