@@ -25,18 +25,13 @@ class ImageResults {
     public function resultsImages($pageIndex, $numOfResultsPerPage, $term, $maxPages) {
         $totalResults = $this->getNumResults($term);
         $totalPages = ceil($totalResults / $numOfResultsPerPage);
-    
-        $pageIndex = max(min($pageIndex, $totalPages), 1);
-        $startPage = max(min($pageIndex - floor($maxPages / 2), $totalPages - $maxPages + 1), 1);
-        $endPage = min($startPage + $maxPages - 1, $totalPages);
-    
-        $displayResults = ($pageIndex - 1) * $numOfResultsPerPage;
-    
+        
         $query = $this->connection->prepare("SELECT *
                                     FROM images 
                                     WHERE title LIKE :term 
                                     OR alt LIKE :term
-                                    ORDER BY id DESC");
+                                    ORDER BY id DESC
+                                    LIMIT 48");
     
         $searchTerm = "%" . $term . "%";
         $query->bindParam(":term", $searchTerm);
@@ -48,7 +43,6 @@ class ImageResults {
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $id = $row["id"];
             $imageUrl = $row["imageUrl"];
-            $pageUrl = $row["pageUrl"];
             $title = $row["title"];
             $alt = $row["alt"];
     
