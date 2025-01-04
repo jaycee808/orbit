@@ -103,11 +103,6 @@ a {
     bottom: 2rem;
     right: 2rem;
     text-align: right;
-    /* background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3); */
     border-radius: 1rem;
     padding: 1rem;
     color: var(--cream);
@@ -234,9 +229,9 @@ a {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Search Results Section*/
+/* Search Results Section */
 
-#resultsDisplay {
+.results-section {
     margin-left: 30%;
     padding: 2rem;
     flex: 1;
@@ -344,10 +339,8 @@ a {
 /* Image Results Container */
 
 .imageResults {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    display: flex;
     gap: 1.5rem;
-    justify-content: center;
 }
 
 /* Individual Image Display */
@@ -362,13 +355,8 @@ a {
     overflow: hidden;
 }
 
-.imagesDisplay:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
 .imagesDisplay img {
-    width: 100%;
+    width: 200px;
     height: auto;
     border-radius: 0.5rem;
     display: block;
@@ -489,10 +477,10 @@ a {
         margin-top: 1rem;
     }
 
-    .imageResults {
+    /* .imageResults {
         grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
         gap: 1rem;
-    }
+    } */
 
     .imagesDisplay img {
         border-radius: 0.5rem;

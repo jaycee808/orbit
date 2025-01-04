@@ -9,7 +9,6 @@ if (isset($_GET["term"])) {
     exit("Please enter a search term");
 }
 
-$type = isset($_GET["type"]) ? $_GET["type"] : "pages";
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 ?>
 
@@ -35,43 +34,32 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                     <input class="search-page-search-box" type="text" name="term" placeholder="<?php echo $term ?>">
                     <button class="search-page-search-icon" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-        <!-- Tabs to filter search results -->
-        <div class="search-tabs">
-            <ul class="tab-list">
-                <li class="<?php echo $type == 'pages' ? 'active' : '' ?>">
-                    <a href='<?php echo "search.php?term=$term&type=Pages"; ?>'>
-                        Pages
-                    </a>
-                </li>
-
-                <li class="<?php echo $type == 'images' ? 'active' : '' ?>">
-                    <a href='<?php echo "search.php?term=$term&type=images"; ?>'>
-                        Images
-                    </a>
-                </li>
-            </ul>
-        </div>
         </div>
 
-        <!-- section to display search results -->
-        <div id="resultsDisplay">
-            <?php
-            $numOfResultsPerPage = 30;
-            $maxPages = 8;
-            $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
+        <!-- image search results -->
+        <div id="imageResultsDisplay" class="results-section">
+            <div class="images-title">Images</div>
+                <div class="imageResults horizontal-scroll">
+                    <?php 
+                        $imageSearch = new ImageResults($connection);
+                        echo $imageSearch->resultsImages($page, 24, $term, 1);
+                    ?>
+                </div>
+        </div>
 
-            // Display page results
-            if ($type == "pages") {
-                $search = new SearchResults($connection);
-                echo $search->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
-            }
+        <!-- pages search results -->
+        <div id="pageResultsDisplay" class="results-section">
+            <div class="pages-title">Pages</div>
+                <div class="pageResults">
+                    <?php
+                    $numOfResultsPerPage = 30;
+                    $maxPages = 8;
+                    $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-            // Display image results
-            else if ($type == "images") {
-                $search = new ImageResults($connection);
-                echo $search->resultsImages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
-            }
-            ?>
+                    $pageSearch = new SearchResults($connection);
+                    echo $pageSearch->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
+                    ?>
+                </div>
         </div>
     </div>
 

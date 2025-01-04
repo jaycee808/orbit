@@ -37,8 +37,7 @@ class ImageResults {
         $query->bindParam(":term", $searchTerm);
         $query->execute();
     
-        $resultsHtml = "<div class='totalResults'>Total results: $totalResults</div>";
-        $resultsHtml .= "<div class='imageResults'>";
+        $resultsHtml = "<div class='imageResults'>";
     
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             $id = $row["id"];
@@ -55,7 +54,7 @@ class ImageResults {
             }
     
             $resultsHtml .= "<div class='imagesDisplay'>
-                                    <a href='$imageUrl'>
+                                <a href='$imageUrl'>
                                     <img src='$imageUrl'>
                                     <span class='imageDetails'>$displayText</span>
                                 </a>
