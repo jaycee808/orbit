@@ -213,6 +213,7 @@ a {
     font-size: 1.25rem;
     font-weight: bold;
     color: var(--white);
+    overflow: hidden;
 }
 
 /* Image Results */
@@ -236,6 +237,7 @@ a {
 
 .imageResults::-webkit-scrollbar {
     height: 1rem;
+    width: 2rem;
 }
 
 .imageResults::-webkit-scrollbar-thumb {
@@ -249,6 +251,7 @@ a {
     height: auto;
     background-color: var(--white);
     overflow: hidden;
+    border-radius: 0.5rem;
 }
 
 .imagesDisplay img {
@@ -256,6 +259,7 @@ a {
     height: auto;
     display: block;
     border: 2px solid var(--white);
+    border-radius: 0.5rem;
 }
 
 .imageDetails {
@@ -286,6 +290,7 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    overflow: hidden;
 }
 
 .resultContainer {
@@ -381,9 +386,11 @@ a {
     }
 
     .home-page-header {
-        width: 100%;
+        width: 80%;
         padding: 1rem;
         position: relative;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .home-page-logo, .search-page-logo {
@@ -444,4 +451,95 @@ a {
         margin-bottom: 2rem;
         width: 80%;
     }
+}
+
+@media only screen and (max-width: 500px) {
+    
+    body {
+        display: grid;
+    }
+
+    .home-page-header {
+        width: 80%;
+        padding: 0.5rem;
+    }
+
+    .home-page-logo {
+        font-size: 5rem;
+    }
+
+    .quick-search {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0;
+    }
+
+    /* Search Page Layout */
+
+    #search-page {
+        display: grid;
+        flex-direction: column;
+    }
+
+    .search-page-logo a {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    .search-page-header {
+        width: 80%;
+        padding: 0.5rem;
+    }
+
+    .results-title {
+        font-size: 3rem;
+    }
+
+    .results-section {
+        margin-left: 0;
+        gap: 1rem;
+        height: 100dvh;
+        padding: 1.25rem;
+        width: 100dvw;
+    }
+
+    #imageResultsDisplay {
+        padding: 0.75rem;
+    }
+    
+    .imageResults {
+        gap: 0.75rem;
+        padding: 1rem 0;
+    }
+    
+    .resultContainer {
+        padding: 1rem;
+        margin-bottom: 2rem;
+        width: 280px;
+    }
+
+    .totalResults {
+        font-size: 0.75rem;
+    }
+    
+    .title a.result {
+        font-size: 1.25rem;
+    }
+
+    .url {
+        font-size: 0.75rem;
+        word-wrap: break-word;
+        margin-top: 0.5rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+        color: var(--black);
+        margin-top: 0.5rem;
+    }
+
+    .footer {
+        padding: 0.5rem;
+        font-size: 0.5rem;
+    }    
 }
