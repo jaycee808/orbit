@@ -36,30 +36,33 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
                 </form>
         </div>
 
-        <!-- image search results -->
-        <div id="imageResultsDisplay" class="results-section">
-            <div class="images-title">Images</div>
-                <div class="imageResults horizontal-scroll">
-                    <?php 
-                        $imageSearch = new ImageResults($connection);
-                        echo $imageSearch->resultsImages($page, 24, $term, 1);
-                    ?>
-                </div>
-        </div>
+        <!-- search results display -->
+        <div class="results-section">
+            <!-- image search results -->
+            <div id="imageResultsDisplay">
+                <div class="results-title">Images</div>
+                    <div class="imageResults">
+                        <?php 
+                            $imageSearch = new ImageResults($connection);
+                            echo $imageSearch->resultsImages($page, 24, $term, 1);
+                        ?>
+                    </div>
+            </div>
 
-        <!-- pages search results -->
-        <div id="pageResultsDisplay" class="results-section">
-            <div class="pages-title">Pages</div>
-                <div class="pageResults">
-                    <?php
-                    $numOfResultsPerPage = 30;
-                    $maxPages = 8;
-                    $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
+            <!-- pages search results -->
+            <div id="pageResultsDisplay">
+                <div class="results-title">Pages</div>
+                    <div class="pageResults">
+                        <?php
+                        $numOfResultsPerPage = 30;
+                        $maxPages = 8;
+                        $pageIndex = isset($_GET['page']) ? intval($_GET['page']) : 1;
 
-                    $pageSearch = new SearchResults($connection);
-                    echo $pageSearch->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
-                    ?>
-                </div>
+                        $pageSearch = new SearchResults($connection);
+                        echo $pageSearch->resultsPages($pageIndex, $numOfResultsPerPage, $term, $maxPages);
+                        ?>
+                    </div>
+            </div>
         </div>
     </div>
 
