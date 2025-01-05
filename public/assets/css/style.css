@@ -37,7 +37,7 @@ a {
 .home-page-header {
     width: 30%;
     padding: 2rem;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     height: 100dvh;
@@ -50,6 +50,8 @@ a {
 .home-page-logo {
     font-size: 7.5rem;
     color: var(--white);
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .home-page-search-bar {
@@ -131,7 +133,6 @@ a {
 #search-page {
     display: flex;
     flex-direction: column;
-    height: 100dvh;
 }
 
 /* Header - Search Page */
@@ -139,10 +140,9 @@ a {
 .search-page-header {
     width: 30%;
     padding: 2rem;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -154,6 +154,8 @@ a {
     font-size: 7.5rem;
     color: var(--white);
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .search-page-search-bar {
@@ -189,13 +191,14 @@ a {
 /* Search Results Section */
 
 .results-section {
-    margin-left: 35%;
+    margin-left: 30%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     height: 100dvh;
     overflow-y: auto;
     padding: 2rem;
+    width: 70dvw;
 }
 
 .results-title {
@@ -333,11 +336,10 @@ a {
 .pageNumbers a {
     margin: 0 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: var(--black);
+    background: var(--black);
     color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s;
     text-decoration: none;
+    border-radius: 0.5rem;
 }
 
 .pageNumbers a:hover {
@@ -355,7 +357,7 @@ a {
 
 .footer {
     padding: 2rem;
-    color: var(--gray);
+    color: var(--white);
     font-size: 1rem;
     position: fixed;
     bottom: 0;
@@ -368,4 +370,78 @@ a {
 
 .footer-title {
     font-weight: bold;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+    
+    body {
+        display: grid;
+    }
+
+    .home-page-header {
+        width: 100%;
+        padding: 1rem;
+        position: relative;
+    }
+
+    .home-page-logo, .search-page-logo {
+        font-size: 6rem;
+        text-align: center;
+    }
+
+    .quick-search {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0;
+    }
+
+    .footer {
+        padding: 1rem;
+        font-size: 0.875rem;
+    }
+
+    /* Search Page Layout */
+
+    #search-page {
+        display: grid;
+        flex-direction: column;
+    }
+
+    .search-page-header {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+        position: static;
+        top: 0;
+        left: 0;
+    }
+
+    .results-section {
+        margin-left: 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: 100dvh;
+        overflow-y: auto;
+        padding: 2rem;
+        width: 95dvw;
+    }
+
+    #imageResultsDisplay {
+        padding: 0.75rem;
+    }
+    
+    .imageResults {
+        gap: 0.75rem;
+        padding: 1rem 0;
+    }
+    
+    .resultContainer {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        width: 80%;
+    }
 }
