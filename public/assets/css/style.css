@@ -320,6 +320,7 @@ a {
     font-size: 1rem;
     color: var(--gray);
     margin-top: 0.5rem;
+    word-wrap: break-word;
 }
 
 .description {
