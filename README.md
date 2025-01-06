@@ -11,7 +11,7 @@ Orbit is a search engine designed to provide users with an easy search experienc
 ## Screenshot
 
 <p align="center">
-  <img src="./public/assets/images/orbit-screenshot.png" width="1000" height="auto" title="Screenshot of application">
+  <img src="./public/assets/images/orbit__screenshot.png" width="1000" height="auto" title="Screenshot of application">
 </p>
 
 ## Link to deployed site

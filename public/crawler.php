@@ -221,11 +221,11 @@ function addImageToDatabase($url, $src, $alt, $title) {
 // $fifthURL = "https://www.billboard.com/";
 // findLinks($fifthURL);
 
-$sevenURL = "https://www.menshealth.com/";
-findLinks($sevenURL);
+// $sevenURL = "https://www.menshealth.com/";
+// findLinks($sevenURL);
 
-// $nineURL = "https://pitchfork.com/";
-// findLinks($nineURL);
+$nineURL = "https://pitchfork.com/";
+findLinks($nineURL);
 
 // $tenURL = "https://variety.com/";
 // findLinks($tenURL);
